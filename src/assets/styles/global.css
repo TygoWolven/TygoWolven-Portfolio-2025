@@ -1,0 +1,88 @@
+
+/* Fonts */
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Tan Kulture";
+    src: url("/fonts/TAN-KULTURE-DISPLAY.ttf");
+}
+
+/* Custom Properties */
+:root {
+    /* Colors */
+    --white: rgb(230, 230, 230);
+    --dark-grey: rgb(20, 20, 20);
+    --light-blue: rgb(130, 150, 200);
+}
+
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    font-size: 18px;
+    color: var(--white);
+	font-family: Montserrat, 
+                 Inter, 
+                 Roboto, 
+                 'Helvetica Neue', 
+                 'Arial Nova', 
+                 'Nimbus Sans', 
+                 Arial, 
+                 sans-serif;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+body {
+    background: radial-gradient(
+		ellipse at 50% 80%,
+		var(--white),
+		var(--light-blue),
+		var(--dark-grey) 50%
+	);
+    background-size: 200%;
+    background-position: 50%;
+    backdrop-filter: blur(10rem);
+}
+
+section {
+    padding: 2rem;
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: "Tan Kulture";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+h1 {
+    font-size: 3.5rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+
+/* Bold Text */
+strong {
+    font-size: inherit;
+    font-family: inherit;
+    color: var(--light-blue);
+}

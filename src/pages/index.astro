@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/organisms/Header.astro';
+---
+
+<Layout>
+	<Header />
+	<section id="home">
+		<h1>Your <strong>Creative</strong> Frontend Designer and Developer</h1>
+		<p>Hello there! I am Tygo Wolven, welcome to my 2025 frontend portfolio! Scroll down to explore more about me, and feel free to get in touch!</p>
+	</section>
+
+	<section id="journey">
+		<h2>Let's find out more about <strong>my journey</strong></h2>
+	</section>
+</Layout>
+
+<style>
+	#home {
+		height: 100vh;
+
+		h1 {
+			max-width: 24ch;
+		}
+	}
+
+	#journey {
+		border-radius: 8rem 8rem 0 0;
+		background: var(--dark-grey);
+
+		h2 {
+			max-width: 18ch;
+		}
+	}
+</style>
