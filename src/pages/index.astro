@@ -1,23 +1,97 @@
 ---
+// Layout
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/organisms/Header.astro';
+import Footer from '../components/organisms/Footer.astro';
+
+// Content
+import Skill from '../components/molecules/Skill.astro';
 ---
 
 <Layout>
 	<Header />
 	<section id="home">
-		<h1>Your <strong>Creative</strong> Frontend Designer and Developer</h1>
-		<p>Hello there! I am Tygo Wolven, welcome to my 2025 frontend portfolio! Scroll down to explore more about me, and feel free to get in touch!</p>
+		<div class="section-inner">
+			<h1>Your <strong>Creative</strong> Frontend Designer and Developer</h1>
+			<p>Hello there! I am Tygo Wolven, welcome to my 2025 frontend portfolio! Scroll down to explore more about me, and feel free to get in touch!</p>
+		</div>
 	</section>
 
 	<section id="journey">
-		<h2>Let's find out more about <strong>my journey</strong></h2>
+		<div>
+			<h2>Lets find out more about <strong>my journey</strong></h2>
+			<a href="#contact" class="primary-button">Or just contact me already!</a>
+		</div>
+		<p>
+			My journey to becoming a <strong>Creative Frontend Designer & Developer</strong> started at the <strong>Amsterdam University of Applied Sciences</strong> where 
+			I have been following 2 studies. During those studies I have been learning about how to build user friendly websites using various technologies. Think about the 
+			basic languages, frameworks, API's and databases. My goal when building a website is enhancing the user experience by improving the <strong>Accessibility, Performance, 
+			Responsiveness</strong> and <strong>Progressive Enhancements.</strong>
+		</p>
 	</section>
+
+	<section id="work">
+		<div class="section-inner">
+			<p>Now you might wonder, <strong>why</strong> would you need me, instead of someone else? I will explain that by splitting up <strong>my skills</strong> into the next parts.</p>
+			
+			<input id="layout-toggle" type="checkbox">
+			<label for="layout-toggle" class="primary-button toggle">
+				<span>List</span>
+				<span>Buttons</span>
+			</label>
+
+			<ul>
+				<Skill
+					link="web-standards"
+					title="Web Standards" 
+					skills="Responsiveness, Accessibility, Performance, Progressive Enhancement"  
+					experience="2024" 
+				/>
+				<Skill
+					link="coding-languages"
+					title="Coding Languages" 
+					skills="HTML, CSS, Javascript" 
+					experience="2024"     
+				/>
+				<Skill
+					link="frameworks"
+					title="Frameworks" 
+					skills="Vue, Svelte, Astro"  
+					experience="2024"    
+				/>
+				<Skill
+					link="design-workflow"
+					title="Design Workflow" 
+					skills="Figma, Photoshop"   
+					experience="2022"   
+				/>
+				<Skill
+					link="wordpress"
+					title="Wordpress" 
+					skills="Elementor, Toolkit, WPBakery"   
+					experience="2025"   
+				/>
+			</ul>
+		</div>
+	</section>
+
+	<section id="contact">
+		<div class="section-inner">
+			<h2>
+				Lets <br>
+				work <br>
+				together
+			</h2>
+		</div>
+	</section>
+
+	<Footer />
 </Layout>
 
 <style>
 	#home {
 		height: 100vh;
+		background: none;
 
 		h1 {
 			max-width: 24ch;
@@ -25,11 +99,107 @@ import Header from '../components/organisms/Header.astro';
 	}
 
 	#journey {
-		border-radius: 8rem 8rem 0 0;
-		background: var(--dark-grey);
+		border-radius: 100px 100px 0 0;
+
+		display: flex;
 
 		h2 {
-			max-width: 18ch;
+			min-width: 18ch;
+		}
+	}
+
+	#work {
+		input {
+			display: none;
+		}
+		
+		ul {
+			li {
+				div::before {
+					content: "";
+                	position: absolute;
+                	top: 0;
+                	right: 0;
+                	width: 50%;
+                	height: 100%;
+				}
+
+				&:nth-of-type(1n) {
+					border-radius: 1rem;
+					background: var(--medium-grey);
+					border: 4px solid var(--light-grey);
+					box-shadow: 5px 10px 20px 5px black;
+
+					div::before {
+                		background: linear-gradient(to right, transparent, var(--medium-grey));
+					}
+				}
+
+				&:nth-of-type(2n) {
+					background: none;
+					box-shadow: none;
+					border: none;
+
+					div::before {
+                		background: linear-gradient(to right, transparent, var(--dark-grey));
+					}
+				}
+			}
+		}
+
+		ul:has(li.animate) {
+			gap: 1rem;
+			display: flex;
+			flex-wrap: wrap;
+			transform: skew(20deg) skewY(-10deg);
+
+			li.animate {
+				position: relative;
+				transition: var(--quick);
+				background: var(--medium-grey);
+				border: 4px solid var(--light-grey);
+				box-shadow: -10px 10px 0 0 var(--light-grey);
+
+				a {
+					grid-template-columns: unset;
+
+					h3 {
+						min-width: unset;
+					}
+
+					p, svg {
+						display: none;
+					}
+				}
+
+				&:hover {
+					transform: translateX(-5px) translateY(5px);
+					box-shadow: -5px 5px 0 0 var(--light-grey);
+				}
+		
+			}
+		}
+	}
+
+	#contact {
+		h2 {
+			font-size: 96px;
+			position: relative;
+
+			&::before {
+				content: "Available for work";
+				background: var(--light-blue);
+				position: absolute;
+				left: -10px;
+				top: 46.4%;
+				
+				font-size: 18px;
+				font-weight: 600;
+				line-height: 100%;
+				padding: 4px 48px;
+				color: var(--dark-grey);
+				font-family: Montserrat;
+			}
 		}
 	}
 </style>

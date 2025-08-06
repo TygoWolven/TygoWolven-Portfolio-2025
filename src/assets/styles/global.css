@@ -14,8 +14,18 @@
 :root {
     /* Colors */
     --white: rgb(230, 230, 230);
+
+    --light-grey: rgb(40, 40, 40);
+    --medium-grey: rgb(32, 32, 32);
     --dark-grey: rgb(20, 20, 20);
+
     --light-blue: rgb(130, 150, 200);
+    --medium-blue: rgb(90, 110, 160);
+    --dark-blue: rgb(70, 90, 140);
+
+    /* Transitions */
+    --quick: 0.2s ease;
+    --slow: 0.4s ease;
 }
 
 /* Global Styling */
@@ -52,10 +62,13 @@ body {
     background-size: 200%;
     background-position: 50%;
     backdrop-filter: blur(10rem);
+
+    background: var(--dark-grey);
 }
 
 section {
     padding: 2rem;
+    background: var(--dark-grey);
 
     /* Mobile */
     @media (max-width: 768px) {
@@ -63,21 +76,33 @@ section {
     }
 }
 
+.section-inner {
+    width: 1440px;
+    justify-self: center;
+
+    /* Laptop */
+    @media (max-width: calc(1440px + 4rem)) {
+        width: 100%;
+    }
+}
+
 /* Headings */
-h1, h2, h3 {
+h1, h2 {
     font-family: "Tan Kulture";
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
+    line-height: 120%;
 }
 h1 {
-    font-size: 3.5rem;
+    font-size: 64px;
 }
 h2 {
-    font-size: 2.5rem;
+    font-size: 48px;
 }
 h3 {
-    font-size: 2rem;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 /* Bold Text */
@@ -85,4 +110,45 @@ strong {
     font-size: inherit;
     font-family: inherit;
     color: var(--light-blue);
+}
+
+/* Regular Button | Toggle Button */
+.primary-button {
+    background: var(--light-blue);
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    border: 4px solid var(--dark-blue);
+
+    &.toggle {
+        display: grid;
+        max-width: 16rem;
+        padding: 0.5rem 0;
+        grid-template-columns: 1fr 1fr;
+        background: linear-gradient(to left, var(--light-blue) 50%, var(--medium-blue) 50%);
+
+        span {
+            user-select: none;
+            justify-self: center;
+
+            &:nth-of-type(1) {
+                opacity: 0.6;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+input[type="checkbox"]:checked + .primary-button.toggle {
+    background: linear-gradient(to right, var(--light-blue) 50%, var(--medium-blue) 50%);
+
+    span:nth-of-type(1) {
+        opacity: 1;
+    }
+    span:nth-of-type(2) {
+        opacity: 0.6;
+    }
 }
