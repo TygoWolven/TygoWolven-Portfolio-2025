@@ -1,38 +1,24 @@
 <header>
-    <nav>
-        <a href="/">
-            <img
-                src="/TSW-Logo.png"
-                alt="Tygo Siemon Wolven Logo"
-            />
-        </a>
-
-        <input type="checkbox">
-    </nav>
+    <div class="section-inner">
+        <nav>
+            <a href="/">
+                <img src="/public/TSW-Logo.png" alt="">
+            </a>
+    
+            <input type="checkbox">
+        </nav>
+    </div>
 </header>
 
 <style>
     header {
-        top: 0;
-        position: sticky;
-        mix-blend-mode: difference;
-        padding: 1rem 2rem;
+        position: fixed;
+        justify-self: center;
 
-        input {
-            position: relative;
-            
-            &::before {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 5px;
-                background: red;
-            }
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            padding: 1rem;
+        nav {
+            display: flex;
+            padding: 1rem 0;
+            justify-content: space-between;
         }
     }
 </style>

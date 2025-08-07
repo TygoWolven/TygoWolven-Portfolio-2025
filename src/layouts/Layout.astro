@@ -1,5 +1,10 @@
 ---
+// Global CSS File
 import "../assets/styles/global.css";
+
+// Layout
+import Header from "../components/organisms/Header.astro";
+import Footer from "../components/organisms/Footer.astro";
 ---
 
 <!doctype html>
@@ -12,6 +17,8 @@ import "../assets/styles/global.css";
 		<title>Tygo Siemon Wolven | Creative Frontend Designer & Developer</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>

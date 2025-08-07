@@ -11,7 +11,7 @@ const { link, title, skills, experience } = Astro.props;
         <div>
             <p>{ skills }</p>
         </div>
-        <DiagonalChevron />
+        <DiagonalChevron color="var(--white)" />
     </a>
 </li>
 
@@ -20,6 +20,7 @@ li {
     a {
         display: grid;
         align-items: center;
+
         padding: 2rem 4rem;
         transition: var(--quick);
         grid-template-columns: 1fr 1fr 2fr 1fr;
