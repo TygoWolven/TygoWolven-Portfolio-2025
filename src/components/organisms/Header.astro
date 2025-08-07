@@ -17,13 +17,14 @@ import TSWLogo from "../atoms/icons/TSWLogo.astro";
 
 <style>
     header {
+        z-index: 1;
         position: fixed;
         justify-self: center;
         mix-blend-mode: difference;
 
         nav {
             display: flex;
-            padding: 1rem 0;
+            padding: 2rem 0;
             justify-content: space-between;
         }
 
@@ -48,7 +49,6 @@ import TSWLogo from "../atoms/icons/TSWLogo.astro";
             width: 7rem;
             height: 1rem;
             position: relative;
-            align-self: center;
 
             &::before,
             &::after {
