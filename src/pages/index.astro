@@ -239,18 +239,34 @@ import Skill from '../components/molecules/Skill.astro';
 		  	gap: 1rem;
 			display: flex;
 			flex-wrap: wrap;
-			margin-top: 8rem;
+			margin: 10rem 0 8rem 0;
 			transform: skew(20deg) skewY(-10deg);
 
 			li {
-				transition: transform var(--quick), 
-							box-shadow var(--quick);
+				box-shadow: none;
+				position: relative;
 				background: var(--medium-grey);
+				transition: transform var(--quick);
 				border: 4px solid var(--light-grey);
-				box-shadow: -10px 10px 0 0 var(--light-grey);
+
+				&::after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 12px;
+					left: -12px;
+
+					z-index: -1;
+					border-radius: 1rem;
+					transition: var(--quick);
+					background: var(--light-grey);
+				}
 
 				a {
+					border-radius: 1rem;
 					grid-template-columns: unset;
+					background: var(--medium-grey);
 
 					h3 {
 						min-width: unset;
@@ -263,7 +279,10 @@ import Skill from '../components/molecules/Skill.astro';
 
 				&:hover {
 					transform: translateX(-5px) translateY(5px);
-					box-shadow: -5px 5px 0 0 var(--light-grey);
+					
+					&::after {
+						transform: translateX(5px) translateY(-5px);
+					}
 				}
 			}
 		}

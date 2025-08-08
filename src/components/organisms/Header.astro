@@ -3,21 +3,22 @@ import TSWLogo from "../atoms/icons/TSWLogo.astro";
 ---
 
 <header>
-    <div class="section-inner">
-        <nav>
-            <a href="/">
-                <TSWLogo color="var(--white)" />
-            </a>
-    
-			<input id="menu-button" type="checkbox">
-			<label for="menu-button"></label>        
-        </nav>
-    </div>
+    <nav>
+        <a href="/">
+            <TSWLogo color="var(--white)" />
+        </a>
+
+		<input id="menu-button" type="checkbox">
+		<label for="menu-button"></label>        
+    </nav>
 </header>
 
 <style>
     header {
         z-index: 1;
+        width: 100%;
+        max-width: 1440px;
+
         position: fixed;
         justify-self: center;
         mix-blend-mode: difference;
