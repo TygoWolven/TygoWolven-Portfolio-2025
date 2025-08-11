@@ -35,12 +35,16 @@ import TSWLogo from "../atoms/icons/TSWLogo.astro";
             &:checked {
                 & ~ label {
                     &::before {
-                        transform: rotate(6.7deg);
-                        transform-origin: left;
+                        rotate: 10deg;
+                        transform: translateY(calc(0.5rem - 3px));
+                        transition: transform var(--quick),
+                                    rotate var(--quick) 0.4s;
                     }
                     &::after {
-                        transform: rotate(-6.7deg);
-                        transform-origin: left;
+                        rotate: -10deg;
+                        transform: translateY(-0.5rem);
+                        transition: transform var(--quick),
+                                    rotate var(--quick) 0.4s;                    
                     }
                 }
             }

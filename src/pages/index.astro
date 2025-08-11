@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 // Content
 import Skill from '../components/molecules/Skill.astro';
+import Line from '../components/atoms/icons/Line.astro';
 ---
 
 <Layout>
@@ -27,6 +28,28 @@ import Skill from '../components/molecules/Skill.astro';
 				Responsiveness</strong> and <strong>Progressive Enhancements.</strong>
 			</p>
 		</div>
+		<section>
+			<div class="card anchor">
+				<p>Amsterdam University of Applied Sciences</p>
+			</div>
+
+			<div class="target"></div>
+			
+			<div class="card anchor2 dot line">
+				<p>Communication and Multimedia Design</p>
+				<p class="subtitle">2023-2024</p>
+			</div>
+
+			<div class="card dot line">
+				<p>Frontend Design and Development</p>
+				<p class="subtitle">2024-2026</p>
+			</div>
+
+			<div class="titled-card card">
+				<p>Wordpress Developer at Active Collective</p>
+				<p class="subtitle">20 weeks</p>
+			</div>
+		</section>
 	</section>
 
 	<section id="work">
@@ -41,22 +64,22 @@ import Skill from '../components/molecules/Skill.astro';
 
 			<ul class="subtitles">
 				<li>
-					<h4>
+					<h4 class="subtitle">
 						Subject
 					</h4>
 				</li>
 				<li>
-					<h4>
+					<h4 class="subtitle">
 						Experienced since
 					</h4>
 				</li>
 				<li>
-					<h4>
+					<h4 class="subtitle">
 						Skills
 					</h4>
 				</li>
 				<li>
-					<h4>
+					<h4 class="subtitle">
 						More information
 					</h4>
 				</li>
@@ -146,6 +169,97 @@ import Skill from '../components/molecules/Skill.astro';
 			min-width: 18ch;
 			margin-bottom: 2rem;
 		}
+
+		section {
+			background: radial-gradient(
+				transparent,
+				var(--dark-grey)
+			), radial-gradient(
+				var(--light-grey) 4px, 
+				transparent 4px
+			);
+			background-size: 100%, 50px 50px;
+		}
+
+		.card {
+			max-width: 23ch;
+			width: fit-content;
+			padding: 1rem 2rem;
+			font-weight: 600;
+			position: relative;
+
+			border-radius: 1rem;
+			background: var(--medium-grey);
+			border: 4px solid var(--light-grey);
+
+			&:not(:first-of-type) {
+				margin-top: 2rem;
+				margin-left: 20rem;
+			}
+
+			&.dot {
+				&::before {
+					content: "";
+					position: absolute;
+					width: 10px;
+					height: 10px;
+					top: calc(100% - 7px);
+					left: calc(50% - 9px);
+					border-radius: 50%;
+					border: 4px solid var(--light-blue);
+				}
+			}
+
+			&.line {
+				&::after {
+					content: "";
+					position: absolute;
+					left: calc(50% - 2px);
+					top: calc(100% + 8px);
+					width: 4px;
+					height: 100%;
+					background: var(--light-blue);
+				}
+			}
+		}
+	}
+
+	.anchor {
+		anchor-name: --anchor-1;
+	}
+
+	.anchor2 {
+		anchor-name: --anchor-2;
+	}
+
+	.target {
+		position: absolute;
+		background: linear-gradient(
+			transparent calc(50% - 2px),
+			var(--light-blue) calc(50% - 2px) calc(50% + 2px),
+			transparent calc(50% + 2px)
+		);
+
+		/* Positioning on 1st anchor */
+  		top: anchor(--anchor-1 bottom);
+  		left: anchor(--anchor-1 center);
+
+		/* Position on 2nd anchor */
+  		bottom: anchor(--anchor-2 top);
+  		right: anchor(--anchor-2 center);
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 4px;
+			height: 50%;
+			background: var(--light-blue);
+		}
+		&::after {
+			right: 0;
+			bottom: 0;
+		}
 	}
 
 	#work {
@@ -182,12 +296,6 @@ import Skill from '../components/molecules/Skill.astro';
 				grid-template-columns: 1fr 1fr 2fr 1fr;
 
 				li {
-					h4 {
-						opacity: 0.5;
-						font-size: 12px;
-						font-weight: 600;
-						text-transform: uppercase;
-					}
 					&:first-of-type h4 {
 						min-width: 350px;
 					}

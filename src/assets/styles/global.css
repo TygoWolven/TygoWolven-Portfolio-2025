@@ -110,6 +110,13 @@ strong {
     color: var(--light-blue);
 }
 
+.subtitle {
+    opacity: 0.5;
+	font-size: 12px;
+	font-weight: 600;
+    text-transform: uppercase;
+}
+
 /* Regular Button | Toggle Button */
 .primary-button {
     background: var(--light-blue);
