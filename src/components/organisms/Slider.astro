@@ -1,0 +1,46 @@
+---
+import Star from "../atoms/icons/Star.astro"
+---
+
+<div class="logos flex">
+    <div class="logos-slide flex">
+        <h2>Creative Developer</h2>
+        <Star />
+        <h2>User Experience</h2>
+        <Star /> 
+        <h2>Field Research</h2>
+        <Star />
+        <h2>Content Generating</h2>
+        <Star />
+    </div>
+    <div class="logos-slide flex">
+        <h2>Creative Developer</h2>
+        <Star />
+        <h2>User Experience</h2> 
+        <Star />
+        <h2>Field Research</h2>
+        <Star />
+        <h2>Content Generating</h2>
+        <Star />
+    </div>
+</div>
+
+<style>
+    .logos-slide {
+        animation: 30s slide infinite linear;
+
+        h2 {
+            white-space: nowrap;
+            margin: 0 2rem;
+        }
+    }
+
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+</style>

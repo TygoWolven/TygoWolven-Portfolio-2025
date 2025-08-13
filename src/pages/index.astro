@@ -4,7 +4,8 @@ import Layout from '../layouts/Layout.astro';
 
 // Content
 import Skill from '../components/molecules/Skill.astro';
-import Line from '../components/atoms/icons/Line.astro';
+import Journey from '../components/organisms/Journey.astro';
+import Slider from '../components/organisms/Slider.astro';
 ---
 
 <Layout>
@@ -15,42 +16,9 @@ import Line from '../components/atoms/icons/Line.astro';
 		</div>
 	</section>
 
-	<section id="journey">
-		<div class="section-inner flex justify">
-			<div>
-				<h2>Lets find out more about <strong>my journey</strong></h2>
-				<a href="#contact" class="primary-button">Or just contact me already!</a>
-			</div>
-			<p>
-				My journey to becoming a <strong>Creative Frontend Designer & Developer</strong> started at the <strong>Amsterdam University of Applied Sciences</strong> where 
-				I have been following 2 studies. During those studies I have been learning about how to build user friendly websites using various technologies. Think about the 
-				basic languages, frameworks, API's and databases. My goal when building a website is enhancing the user experience by improving the <strong>Accessibility, Performance, 
-				Responsiveness</strong> and <strong>Progressive Enhancements.</strong>
-			</p>
-		</div>
-		<section>
-			<div class="card anchor">
-				<p>Amsterdam University of Applied Sciences</p>
-			</div>
+	<Journey />
 
-			<div class="target"></div>
-			
-			<div class="card anchor2 dot line">
-				<p>Communication and Multimedia Design</p>
-				<p class="subtitle">2023-2024</p>
-			</div>
-
-			<div class="card dot line">
-				<p>Frontend Design and Development</p>
-				<p class="subtitle">2024-2026</p>
-			</div>
-
-			<div class="titled-card card">
-				<p>Wordpress Developer at Active Collective</p>
-				<p class="subtitle">20 weeks</p>
-			</div>
-		</section>
-	</section>
+	<Slider />
 
 	<section id="work">
 		<div class="section-inner">
@@ -160,108 +128,6 @@ import Line from '../components/atoms/icons/Line.astro';
 		}
 	}
 
-	#journey {
-		margin-top: -100px;
-		padding-top: 100px;
-		border-radius: 100px 100px 0 0;
-
-		h2 {
-			min-width: 18ch;
-			margin-bottom: 2rem;
-		}
-
-		section {
-			background: radial-gradient(
-				transparent,
-				var(--dark-grey)
-			), radial-gradient(
-				var(--light-grey) 4px, 
-				transparent 4px
-			);
-			background-size: 100%, 50px 50px;
-		}
-
-		.card {
-			max-width: 23ch;
-			width: fit-content;
-			padding: 1rem 2rem;
-			font-weight: 600;
-			position: relative;
-
-			border-radius: 1rem;
-			background: var(--medium-grey);
-			border: 4px solid var(--light-grey);
-
-			&:not(:first-of-type) {
-				margin-top: 2rem;
-				margin-left: 20rem;
-			}
-
-			&.dot {
-				&::before {
-					content: "";
-					position: absolute;
-					width: 10px;
-					height: 10px;
-					top: calc(100% - 7px);
-					left: calc(50% - 9px);
-					border-radius: 50%;
-					border: 4px solid var(--light-blue);
-				}
-			}
-
-			&.line {
-				&::after {
-					content: "";
-					position: absolute;
-					left: calc(50% - 2px);
-					top: calc(100% + 8px);
-					width: 4px;
-					height: 100%;
-					background: var(--light-blue);
-				}
-			}
-		}
-	}
-
-	.anchor {
-		anchor-name: --anchor-1;
-	}
-
-	.anchor2 {
-		anchor-name: --anchor-2;
-	}
-
-	.target {
-		position: absolute;
-		background: linear-gradient(
-			transparent calc(50% - 2px),
-			var(--light-blue) calc(50% - 2px) calc(50% + 2px),
-			transparent calc(50% + 2px)
-		);
-
-		/* Positioning on 1st anchor */
-  		top: anchor(--anchor-1 bottom);
-  		left: anchor(--anchor-1 center);
-
-		/* Position on 2nd anchor */
-  		bottom: anchor(--anchor-2 top);
-  		right: anchor(--anchor-2 center);
-
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			width: 4px;
-			height: 50%;
-			background: var(--light-blue);
-		}
-		&::after {
-			right: 0;
-			bottom: 0;
-		}
-	}
-
 	#work {
 		min-height: fit-content;
 
@@ -321,9 +187,9 @@ import Line from '../components/atoms/icons/Line.astro';
 		
 					&:nth-of-type(1n) {
 						border-radius: 1rem;
+						box-shadow: var(--smooth);
 						background: var(--medium-grey);
 						border: 4px solid var(--light-grey);
-						box-shadow: 5px 10px 20px 5px black;
 		
 						div::before {
 							background: linear-gradient(to right, transparent, var(--medium-grey));

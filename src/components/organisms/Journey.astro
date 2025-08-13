@@ -1,0 +1,252 @@
+<section id="journey">
+    <section class="inner-section flex justify">
+        <div>
+            <h2>
+                Lets find out more about <strong>my journey</strong>
+            </h2>
+            <a href="#contact" class="primary-button">
+                Or just contact me already!
+            </a>
+        </div>
+        <p>
+            My journey to becoming a <strong>Creative Frontend Designer & Developer</strong> started at the <strong>Amsterdam University of Applied Sciences</strong> where 
+            I have been following 2 studies. During those studies I have been learning about how to build <strong>user friendly websites</strong> using various technologies. 
+            Think about the basic languages, frameworks, API's and databases. 
+            
+            <br><br>
+            
+            My goal when building a website is to enhance the user experience by improving the <strong>Accessibility, Performance, 
+            Responsiveness</strong> and <strong>Progressive Enhancements.</strong> Those factors will make sure the website is for 
+            everyone in the world, not just me.
+        </p>
+    </section>
+    <section class="inner-section journeymap">
+        <article class="main-anchor dot">
+            <p>
+                Amsterdam University of Applied Sciences
+            </p>
+        </article>
+        
+        <div class="left-anchor-target"></div>
+        <div class="right-anchor-target"></div>
+        
+        <div class="columns">
+            <article>	
+                <h3 class="left-anchor">Internship</h3>
+                <p class="date">20 weeks</p>
+                <p>Wordpress Developer at Active Collective</p>
+            </article>
+        
+            <ul>
+                <h3 class="right-anchor line">Studies</h3>
+                <li class="dot line">
+                    <p>Communication and Multimedia Design</p>
+                    <p class="date">2023-2024</p>
+                </li>
+                <li>
+                    <p>Frontend Design and Development</p>
+                    <p class="date">2024-2026</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+
+<style>
+    #journey {
+        margin-top: -100px;
+        padding-top: 100px;
+        border-radius: 100px 100px 0 0;
+
+        h2 {
+            min-width: 18ch;
+            margin-bottom: 2rem;
+        }
+
+        .journeymap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 6rem 0 2rem 0;
+            max-width: 888px;
+
+            /* Dotted background */
+            background: radial-gradient(
+                circle, 
+                transparent,
+                var(--dark-grey)
+            ), radial-gradient(
+                var(--light-grey) 4px, 
+                transparent 4px
+            );
+            background-size: 100%, 6.25vh 6.25vh;
+
+            & > article {
+                max-width: 24ch;
+            }
+
+            article, li {
+                /* Standard card styling */
+                font-weight: 600;
+                margin-top: 1rem;
+                padding: 1rem 2rem;
+                border-radius: 1rem;
+                box-shadow: var(--smooth);
+                background: var(--medium-grey);
+                border: 4px solid var(--light-grey);
+                position: relative;
+            }
+            
+            .columns {
+                width: 90%;
+                
+                display: flex;
+                justify-content: space-between;
+                
+                h3 {                    
+                    position: relative;
+                    width: fit-content;
+                    font-size: 16px;
+                    padding: 0.5rem 2rem;
+                    border-radius: 0.75rem;
+                    box-shadow: var(--smooth);
+                    color: var(--regular-grey);
+                    background: var(--medium-grey);
+                    border: 4px solid var(--light-grey);
+                }
+
+                .date {
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    color: var(--regular-grey);
+                    margin-top: 0.25rem;
+
+                    & + p {
+                        margin-top: 0.25rem;
+                    }
+                }
+                
+                article {
+                    max-width: 26ch;
+                    padding-top: 2rem;
+                    height: fit-content;
+                    transform: rotate(8deg);
+                    margin-top: 4.78rem;
+
+                    h3 {
+                        position: absolute;
+                        top: -1rem;
+                    }
+                }
+                
+                ul {
+                    max-width: 23ch;
+
+                    h3 {
+                        margin-top: 4rem;
+                        justify-self: center;
+                    }
+                }
+            }
+            
+            /* Anchor positioning */
+            .main-anchor {
+                anchor-name: --main-anchor;
+            }
+            .left-anchor {
+                anchor-name: --left-anchor;
+            }
+            .right-anchor {
+                anchor-name: --right-anchor;
+            }
+
+            .right-anchor-target,
+            .left-anchor-target {
+                position: absolute;
+                background: linear-gradient(
+                    transparent calc(50% - 2px),
+                    var(--light-blue) calc(50% - 2px) calc(50% + 2px),
+                    transparent calc(50% + 2px));
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background: var(--light-blue);
+                    
+                    width: 2px;
+                    margin-top: 4px;
+                    height: calc(50% - 4px);
+                }
+                &::after {
+                    right: 0;
+                    bottom: 0;
+                    width: 4px;
+                    height: 50%;
+                }
+            }
+            
+            .right-anchor-target {
+                /* Positioning on 1st anchor */
+                top: anchor(--main-anchor bottom);
+                left: anchor(--main-anchor center);            
+                
+                /* Position on 2nd anchor */
+                bottom: anchor(--right-anchor top);
+                right: anchor(--right-anchor center);
+            }
+                
+            .left-anchor-target {
+                /* Positioning on 1st anchor */
+                top: anchor(--main-anchor bottom);
+                right: anchor(--main-anchor center);            
+                
+                /* Position on 2nd anchor */
+                bottom: anchor(--left-anchor top);
+                left: anchor(--left-anchor center);
+                
+                /* Invert the anchor-lines */
+                &::after {
+                    left: 0;
+                }
+                &::before {
+                    right: 0;
+                }
+            }
+        }
+    }
+            
+    /* Reusable classes withtin component */
+    .dot {
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            top: calc(100% - 7px);
+            left: calc(50% - 9px);
+            border: 4px solid var(--light-blue);   
+        }
+    }
+    
+    .line {
+        &::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            left: calc(50% - 2px);
+            top: calc(100% + 4px);
+            background: var(--light-blue);
+        }
+    }
+    
+    /* If the list item has a dot, fix the line distance */
+    ul:has(li.dot.line) {                
+        li::after {
+            top: calc(100% + 10px);
+        }
+    }
+</style>

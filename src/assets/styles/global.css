@@ -17,6 +17,7 @@
 
     --light-grey: rgb(40, 40, 40);
     --medium-grey: rgb(32, 32, 32);
+    --regular-grey: rgb(132, 132, 132);
     --dark-grey: rgb(20, 20, 20);
 
     --light-blue: rgb(130, 150, 200);
@@ -26,6 +27,9 @@
     /* Transitions */
     --quick: 0.2s ease;
     --slow: 0.4s ease;
+
+    /* Box-shadows */
+    --smooth: 5px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Global Styling */
@@ -76,13 +80,7 @@ section {
     }
 }
 
-.flex {
-    display: flex;
-}
 
-.justify {
-    justify-content: space-between;
-}
 
 /* Headings */
 h1, h2 {
@@ -111,10 +109,15 @@ strong {
 }
 
 .subtitle {
-    opacity: 0.5;
-	font-size: 12px;
+    font-size: 12px;
 	font-weight: 600;
     text-transform: uppercase;
+    color: var(--regular-grey);
+
+    &.big {
+        font-size: 16px;
+        text-transform: inherit;
+    }
 }
 
 /* Regular Button | Toggle Button */
@@ -158,4 +161,31 @@ input[type="checkbox"]:checked + .primary-button.toggle {
     span:nth-of-type(2) {
         opacity: 0.6;
     }
+}
+
+
+
+
+
+
+
+
+
+.inner-section {
+    padding: 0;
+    width: 1440px;
+    justify-self: center;
+
+    /* Laptop */
+    @media (max-width: calc(1440px + 4rem)) {
+        width: 100%;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.justify {
+    justify-content: space-between;
 }
