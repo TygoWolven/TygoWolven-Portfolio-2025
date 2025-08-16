@@ -5,13 +5,13 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
 <section id="footer">
     <div class="section-inner">
         <footer>
-            <div class="flex justify">
+            <div class="top-footer flex justify">
                 <h3>Tygo Siemon Wolven</h3>
                 <a href="#home" class="back-to-top">
                     <DiagonalChevron color="var(--dark-grey)" />
                 </a>
             </div>
-            <div class="flex justify">
+            <div class="bottom-footer flex justify">
                 <p>12:39 PM Amsterdam</p>
                 <ul class="socials">
                     <li>
@@ -41,69 +41,83 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
         padding-bottom: 2rem;
         border-radius: 100px 100px 0 0;
         background: var(--light-blue);
-
-        h3 {
-            font-size: 64px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            margin-bottom: 4rem;
-            text-transform: uppercase;
-            font-family: "Tan Kulture";
-        }
-
-        p {
-            position: relative;
-            font-weight: 600;
-
-            &::before {
-                content: "Local Time";
-                position: absolute;
-                top: -100%;
-				opacity: 0.5;
-				font-size: 12px;
-				text-transform: uppercase;
-            }
-        }
-
-        .back-to-top {
-            /* Weird paddings to fix the svg path spacing... (Looking for a better fix) */
-            padding: 43px 44px 40px 45px;
-            
-            border-radius: 50%;
-            height: fit-content;
-            background: var(--white);
-            transition: var(--quick);
-
-            svg {
-                scale: 1.5;
-            transform: rotate(-45deg);
+        
+        .top-footer {
+            h3 {
+                font-size: 64px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                margin-bottom: 4rem;
+                text-transform: uppercase;
+                font-family: "Tan Kulture";
             }
 
-            &:hover {
-                scale: 1.1;
-            }
-        }
-
-        .socials {
-            gap: 2rem;
-            display: flex;
-            font-weight: 600;
-            position: relative;
-
-            &::before {
-                content: "Social Media";
-                position: absolute;
-                top: -100%;
-				opacity: 0.5;
-				font-size: 12px;
-				text-transform: uppercase;
-            }
-
-            a {
+            .back-to-top {
+                /* Weird paddings to fix the svg path spacing... (Looking for a better fix) */
+                padding: 43px 44px 40px 45px;
+                
+                border-radius: 50%;
+                height: fit-content;
+                background: var(--white);
                 transition: var(--quick);
-
+    
+                svg {
+                    scale: 1.5;
+                transform: rotate(-45deg);
+                }
+    
                 &:hover {
+                    scale: 1.1;
+                }
+            }
+        }
+
+        .bottom-footer {
+            p {
+                position: relative;
+                font-weight: 600;
+    
+                &::before {
+                    content: "Local Time";
+                    position: absolute;
+                    top: -100%;
                     opacity: 0.5;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                }
+            }
+
+            .socials {
+                gap: 2rem;
+                display: flex;
+                font-weight: 600;
+                position: relative;
+    
+                &::before {
+                    content: "Social Media";
+                    position: absolute;
+                    top: -100%;
+                    opacity: 0.5;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                }
+    
+                a {
+                    transition: var(--quick);
+    
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            /* Mobile */
+            @media (max-width: 768px) {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    margin-bottom: 4rem;
                 }
             }
         }

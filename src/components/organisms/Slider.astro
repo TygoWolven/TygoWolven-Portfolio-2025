@@ -2,31 +2,40 @@
 import Star from "../atoms/icons/Star.astro"
 ---
 
-<div class="logos flex">
-    <div class="logos-slide flex">
-        <h2>Creative Developer</h2>
+<div class="slider flex">
+    <div class="slider-slide flex">
+        <h2>What</h2>
         <Star />
-        <h2>User Experience</h2>
+        <h2>I</h2>
         <Star /> 
-        <h2>Field Research</h2>
+        <h2>have</h2>
         <Star />
-        <h2>Content Generating</h2>
+        <h2>to</h2>
+        <Star />
+        <h2>offer</h2>
         <Star />
     </div>
-    <div class="logos-slide flex">
-        <h2>Creative Developer</h2>
+    <div class="slider-slide flex">
+        <h2>What</h2>
         <Star />
-        <h2>User Experience</h2> 
+        <h2>I</h2>
+        <Star /> 
+        <h2>have</h2>
         <Star />
-        <h2>Field Research</h2>
+        <h2>to</h2>
         <Star />
-        <h2>Content Generating</h2>
+        <h2>offer</h2>
         <Star />
     </div>
 </div>
 
 <style>
-    .logos-slide {
+    .slider {
+        overflow: hidden;
+        margin-bottom: 3.3rem;
+    }
+
+    .slider-slide {
         animation: 30s slide infinite linear;
 
         h2 {

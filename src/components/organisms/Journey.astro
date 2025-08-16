@@ -1,5 +1,5 @@
 <section id="journey">
-    <section class="inner-section flex justify">
+    <section class="section-inner journey-intro flex justify">
         <div>
             <h2>
                 Lets find out more about <strong>my journey</strong>
@@ -20,10 +20,10 @@
             everyone in the world, not just me.
         </p>
     </section>
-    <section class="inner-section journeymap">
+    <section class="section-inner journey-map">
         <article class="main-anchor dot">
             <p>
-                Amsterdam University of Applied Sciences
+                Amsterdam University <br> of Applied Sciences
             </p>
         </article>
         
@@ -34,17 +34,17 @@
             <article>	
                 <h3 class="left-anchor">Internship</h3>
                 <p class="date">20 weeks</p>
-                <p>Wordpress Developer at Active Collective</p>
+                <p>Wordpress Developer at <br> Active Collective</p>
             </article>
         
             <ul>
                 <h3 class="right-anchor line">Studies</h3>
                 <li class="dot line">
-                    <p>Communication and Multimedia Design</p>
+                    <p>Communication and <br> Multimedia Design</p>
                     <p class="date">2023-2024</p>
                 </li>
                 <li>
-                    <p>Frontend Design and Development</p>
+                    <p>Frontend Design <br> and Development</p>
                     <p class="date">2024-2026</p>
                 </li>
             </ul>
@@ -57,18 +57,29 @@
         margin-top: -100px;
         padding-top: 100px;
         border-radius: 100px 100px 0 0;
+        
+        .journey-intro {
+            h2 {
+                min-width: 18ch;
+                margin-bottom: 2rem;
+            }            
 
-        h2 {
-            min-width: 18ch;
-            margin-bottom: 2rem;
+            /* Mobile */
+            @media (max-width: 768px) {
+                flex-direction: column;
+
+                p {
+                    margin-top: 2rem;
+                }
+            }
         }
 
-        .journeymap {
+        .journey-map {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            margin: 6rem 0 2rem 0;
+            margin: 5rem 0 4rem 0;
             max-width: 888px;
 
             /* Dotted background */
@@ -82,10 +93,6 @@
             );
             background-size: 100%, 6.25vh 6.25vh;
 
-            & > article {
-                max-width: 24ch;
-            }
-
             article, li {
                 /* Standard card styling */
                 font-weight: 600;
@@ -98,6 +105,10 @@
                 position: relative;
             }
             
+            p {
+                font-size: 20px;
+            }
+            
             .columns {
                 width: 90%;
                 
@@ -107,7 +118,7 @@
                 h3 {                    
                     position: relative;
                     width: fit-content;
-                    font-size: 16px;
+                    font-size: 18px;
                     padding: 0.5rem 2rem;
                     border-radius: 0.75rem;
                     box-shadow: var(--smooth);
@@ -117,10 +128,10 @@
                 }
 
                 .date {
-                    font-size: 12px;
-                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-weight: normal;
                     color: var(--regular-grey);
-                    margin-top: 0.25rem;
+                    margin-top: 0.75rem;
 
                     & + p {
                         margin-top: 0.25rem;
@@ -128,7 +139,6 @@
                 }
                 
                 article {
-                    max-width: 26ch;
                     padding-top: 2rem;
                     height: fit-content;
                     transform: rotate(8deg);
@@ -141,8 +151,6 @@
                 }
                 
                 ul {
-                    max-width: 23ch;
-
                     h3 {
                         margin-top: 4rem;
                         justify-self: center;

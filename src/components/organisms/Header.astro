@@ -9,7 +9,22 @@ import TSWLogo from "../atoms/icons/TSWLogo.astro";
         </a>
 
 		<input id="menu-button" type="checkbox">
-		<label for="menu-button"></label>        
+		<label for="menu-button"></label>      
+
+        <ul class="menu">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="#journey">Journey</a>
+            </li>
+            <li>
+                <a href="#work">Work</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
     </nav>
 </header>
 
@@ -22,7 +37,6 @@ import TSWLogo from "../atoms/icons/TSWLogo.astro";
         
         position: fixed;
         justify-self: center;
-        mix-blend-mode: difference;
         
         /* Mobile */
         @media (max-width: 768px) {
@@ -34,6 +48,28 @@ import TSWLogo from "../atoms/icons/TSWLogo.astro";
             justify-content: space-between;
         }
 
+        .menu {
+            display: none;
+            position: absolute;
+
+            gap: 2rem;
+            width: 200%;
+            height: 100vh;
+            margin-top: -2rem;
+            user-select: none;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(-25%);
+            background: var(--dark-grey);
+            
+            li a {
+                font-size: 36px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-family: "Tan Kulture";
+            }
+        }
+
         input[type="checkbox"] {
             display: none;
 
@@ -43,19 +79,24 @@ import TSWLogo from "../atoms/icons/TSWLogo.astro";
                         rotate: 10deg;
                         transform: translateY(calc(0.5rem - 3px));
                         transition: transform var(--quick),
-                                    rotate var(--quick) 0.4s;
+                                    rotate var(--quick) 0.3s;
                     }
                     &::after {
                         rotate: -10deg;
                         transform: translateY(-0.5rem);
                         transition: transform var(--quick),
-                                    rotate var(--quick) 0.4s;                    
+                                    rotate var(--quick) 0.3s;                    
                     }
+                }
+
+                & ~ ul.menu {
+                    display: flex;
                 }
             }
         }
 
         label {
+            z-index: 1;
             width: 7rem;
             height: 1rem;
             position: relative;
