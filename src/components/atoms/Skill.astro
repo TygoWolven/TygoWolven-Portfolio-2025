@@ -1,0 +1,70 @@
+---
+import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
+
+const { link, title, skills, experience } = Astro.props;
+---
+
+<li>
+    <a href={ link }>
+        <h3>{ title }</h3>
+        <p>{ experience }</p>
+        <div>
+            <p>{ skills }</p>
+        </div>
+        <DiagonalChevron color="var(--white)" />
+    </a>
+</li>
+
+<style>
+    li {
+        a {
+            display: grid;
+            align-items: center;
+
+            padding: 2rem 4rem;
+            grid-template-columns: 1fr 1fr 2fr 1fr;
+
+            h3 {
+                min-width: 350px;
+            }
+
+            div {
+                overflow: hidden;
+                position: relative;
+
+                p {
+                    white-space: nowrap;
+                }
+            }
+
+            svg {
+                justify-self: end;
+                transition: var(--quick);
+            }
+        }
+
+        &:hover {
+            a {
+                svg {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        /* Mobile / Laptop */
+        @media (max-width: 968px) {
+            a {
+                display: flex;
+                justify-content: space-between;
+
+                h3 {
+                    min-width: unset;
+                }
+
+                p {
+                    display: none;
+                }
+            }
+        }
+    }
+</style>

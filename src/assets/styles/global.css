@@ -5,18 +5,6 @@ strong {
     color: var(--light-blue);
 }
 
-.subtitle {
-    font-size: 12px;
-	font-weight: 600;
-    text-transform: uppercase;
-    color: var(--regular-grey);
-    
-    &.big {
-        font-size: 16px;
-        text-transform: inherit;
-    }
-}
-
 /* Regular Button | Toggle Button */
 .primary-button {
     background: var(--light-blue);

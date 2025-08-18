@@ -3,8 +3,9 @@
 import Layout from '../layouts/Layout.astro';
 
 // Content
-import Skill from '../components/molecules/Skill.astro';
-import Journey from '../components/organisms/Journey.astro';
+import SectionJourney from '../components/organisms/SectionJourney.astro';
+import SectionWork from '../components/organisms/SectionWork.astro';
+import SectionContact from '../components/organisms/SectionContact.astro';
 import Slider from '../components/organisms/Slider.astro';
 ---
 
@@ -16,87 +17,12 @@ import Slider from '../components/organisms/Slider.astro';
 		</div>
 	</section>
 
-	<Journey />
+	<SectionJourney />
 
 	<Slider />
-	
-	<section id="work">
-		<div class="section-inner">
-			<p>Now you might wonder, <strong>why</strong> would you need me, instead of someone else? I will explain that by splitting up <strong>my skills</strong> into the next parts.</p>
 
-			<input id="toggle-button" type="checkbox">
-			<label for="toggle-button" class="primary-button toggle">
-				<span>List</span>
-				<span>Buttons</span>
-			</label>
-
-			<ul class="subtitles">
-				<li>
-					<h4 class="subtitle">
-						Subject
-					</h4>
-				</li>
-				<li>
-					<h4 class="subtitle">
-						Experienced since
-					</h4>
-				</li>
-				<li>
-					<h4 class="subtitle">
-						Skills
-					</h4>
-				</li>
-				<li>
-					<h4 class="subtitle">
-						More information
-					</h4>
-				</li>
-			</ul>
-		
-			<ul class="skills">
-				<Skill
-					link="web-standards"
-					title="Web Standards" 
-					skills="Responsiveness, Accessibility, Performance, Progressive Enhancement"  
-					experience="2024" 
-				/>
-				<Skill
-					link="coding-languages"
-					title="Coding Languages" 
-					skills="HTML, CSS, Javascript" 
-					experience="2024"     
-				/>
-				<Skill
-					link="frameworks"
-					title="Frameworks" 
-					skills="Vue, Svelte, Astro"  
-					experience="2024"    
-				/>
-				<Skill
-					link="design-workflow"
-					title="Design Workflow" 
-					skills="Figma, Photoshop"   
-					experience="2022"   
-				/>
-				<Skill
-					link="wordpress"
-					title="Wordpress" 
-					skills="Elementor, Toolkit, WPBakery"   
-					experience="2025"   
-				/>
-			</ul>
-		</div>
-	</section>
-
-	<section id="contact">
-		<div class="section-inner">
-			<h2>
-				Lets <br>
-				work <br>
-				together
-			</h2>
-		</div>
-	</section>
+	<SectionWork />
+	<SectionContact />
 </Layout>
 
 <style>
@@ -124,166 +50,6 @@ import Slider from '../components/organisms/Slider.astro';
 				font-weight: 600;
 				justify-self: end;
 				color: var(--dark-grey);
-			}
-		}
-	}
-
-	#work {
-		min-height: fit-content;
-
-		.section-inner {
-			display: grid;
-			grid-template-areas: 
-			"text switch"
-			"subtitles subtitles"
-			"skills skills";
-
-			& > p {
-				grid-area: text;
-				max-width: 48ch;
-			}
-
-			input {
-				display: none;
-
-				& + label {
-					grid-area: switch;
-					justify-self: end;
-					width: fit-content;
-				}
-			}
-
-			ul.subtitles {
-				grid-area: subtitles;
-				margin: 3rem 0 0.5rem 0;
-
-				display: grid;
-				padding: 0 4rem;
-				grid-template-columns: 1fr 1fr 2fr 1fr;
-
-				li {
-					&:first-of-type h4 {
-						min-width: 350px;
-					}
-					&:last-of-type h4 {
-						justify-self: end;
-					}
-				}
-			}
-
-			ul.skills {
-				grid-area: skills;
-				justify-content: center;
-
-				li {
-					div::before {
-						content: "";
-						position: absolute;
-						top: 0;
-						right: 0;
-						width: 50%;
-						height: 100%;
-					}
-		
-					&:nth-of-type(1n) {
-						border-radius: 1rem;
-						box-shadow: var(--smooth);
-						background: var(--medium-grey);
-						border: 4px solid var(--light-grey);
-		
-						div::before {
-							background: linear-gradient(to right, transparent, var(--medium-grey));
-						}
-					}
-		
-					&:nth-of-type(2n) {
-						background: none;
-						box-shadow: none;
-						border: none;
-		
-						div::before {
-							background: linear-gradient(to right, transparent, var(--dark-grey));
-						}
-					}
-				}
-			}
-		}
-
-		input[type="checkbox"]#toggle-button:checked ~ .skills {
-		  	gap: 1rem;
-			display: flex;
-			flex-wrap: wrap;
-			margin: 10rem 0 8rem 0;
-			transform: skew(20deg) skewY(-10deg);
-
-			li {
-				box-shadow: none;
-				position: relative;
-				background: var(--medium-grey);
-				transition: transform var(--quick);
-				border: 4px solid var(--light-grey);
-
-				&::after {
-					content: "";
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					top: 12px;
-					left: -12px;
-
-					z-index: -1;
-					border-radius: 1rem;
-					transition: var(--quick);
-					background: var(--light-grey);
-				}
-
-				a {
-					border-radius: 1rem;
-					grid-template-columns: unset;
-					background: var(--medium-grey);
-
-					h3 {
-						min-width: unset;
-					}
-
-					p, svg {
-						display: none;
-					}
-				}
-
-				&:hover {
-					transform: translateX(-5px) translateY(5px);
-					
-					&::after {
-						transform: translateX(5px) translateY(-5px);
-					}
-				}
-			}
-		}
-		input[type="checkbox"]#toggle-button:checked ~ .subtitles {
-			display: none;
-		}
-	}
-
-	#contact {
-		h2 {
-			font-size: 96px;
-			position: relative;
-			margin-top: 1.3rem;
-
-			&::before {
-				content: "Available for work";
-				background: var(--light-blue);
-				position: absolute;
-				left: -10px;
-				top: 46.4%;
-				
-				font-size: 18px;
-				font-weight: 600;
-				line-height: 100%;
-				padding: 4px 48px;
-				color: var(--dark-grey);
-				font-family: Montserrat;
 			}
 		}
 	}

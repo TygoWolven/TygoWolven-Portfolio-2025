@@ -1,0 +1,46 @@
+<section id="contact">
+    <section class="section-inner">
+        <h2>
+			Lets <br>
+			work <br>
+			together
+		</h2>
+    </section>
+</section>
+
+<style>
+    #contact {
+		h2 {
+			font-size: 96px;
+			position: relative;
+			margin-top: 1.3rem;
+
+			&::before {
+				content: "Available for work";
+				background: var(--light-blue);
+				position: absolute;
+				left: -10px;
+				top: 46.4%;
+				
+				font-size: 18px;
+				font-weight: 600;
+				line-height: 100%;
+				padding: 4px 48px;
+				color: var(--dark-grey);
+				font-family: Montserrat;
+			}
+		}
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 64px;
+
+                &::before {
+                    font-size: 12px;
+                    padding: 4px 32px;
+                }
+            }
+        }
+	}
+</style>

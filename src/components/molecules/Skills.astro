@@ -1,0 +1,142 @@
+---
+import Skill from "../atoms/Skill.astro"
+---
+
+<ul class="subtitles">
+	<li>
+		<h4 class="subtitle">
+			Subject
+		</h4>
+	</li>
+	<li>
+		<h4 class="subtitle">
+			Experienced since
+		</h4>
+	</li>
+	<li>
+		<h4 class="subtitle">
+			Skills
+		</h4>
+	</li>
+	<li>
+		<h4 class="subtitle">
+			More information
+		</h4>
+	</li>
+</ul>
+
+<ul class="skills">
+	<Skill
+		link="web-standards"
+		title="Web Standards" 
+		skills="Responsiveness, Accessibility, Performance, Progressive Enhancement"  
+		experience="2024" 
+	/>
+	<Skill
+		link="coding-languages"
+		title="Coding Languages" 
+		skills="HTML, CSS, Javascript" 
+		experience="2024"     
+	/>
+	<Skill
+		link="frameworks"
+		title="Frameworks" 
+		skills="Vue, Svelte, Astro"  
+		experience="2024"    
+	/>
+	<Skill
+		link="design-workflow"
+		title="Design Workflow" 
+		skills="Figma, Photoshop"   
+		experience="2022"   
+	/>
+	<Skill
+		link="wordpress"
+		title="Wordpress" 
+		skills="Elementor, Toolkit, WPBakery"   
+		experience="2025"   
+	/>
+</ul>
+
+<style>
+    ul.subtitles {
+		display: grid;
+		grid-area: subtitles;
+		grid-template-columns: 1fr 1fr 2fr 1fr;
+
+		padding: 0 4rem;
+		margin: 3rem 0 0.5rem 0;
+	
+        li {
+            h4.subtitle {
+                font-size: 12px;
+                font-weight: 600;
+                white-space: nowrap;
+                text-transform: uppercase;
+                color: var(--regular-grey);
+            }
+
+			&:first-of-type h4 {
+				min-width: 350px;
+			}
+			&:last-of-type h4 {
+				justify-self: end;
+			}
+		}
+
+        /* Mobile / Laptop */
+        @media (max-width: 968px) {
+            li {
+                h4.subtitle {
+                    &:first-of-type {
+                        min-width: unset;
+                    }
+                }
+            }
+
+            li:nth-of-type(2),
+            li:nth-of-type(3) {
+                h4 {
+                    display: none;
+                }
+            }
+        }
+	}
+
+	ul.skills {
+		grid-area: skills;
+		justify-content: center;
+	
+        li {
+			div::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 50%;
+				height: 100%;
+			}
+	
+			&:nth-of-type(1n) {
+				border-radius: 1rem;
+				box-shadow: var(--smooth);
+				background: var(--medium-grey);
+				border: 4px solid var(--light-grey);
+	
+				div::before {
+					background: linear-gradient(to right, transparent, var(--medium-grey));
+				}
+			}
+	
+			&:nth-of-type(2n) {
+				background: none;
+				box-shadow: none;
+				border: none;
+	
+				div::before {
+					background: linear-gradient(to right, transparent, var(--dark-grey));
+				}
+			}
+		}
+	}
+</style>
