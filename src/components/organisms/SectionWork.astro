@@ -29,6 +29,14 @@ import Skills from "../molecules/Skills.astro"
             "subtitles subtitles"
             "skills skills";
 
+            /* Mobile */
+            @media (max-width: 768px) {
+                grid-template-areas:
+                "text"
+                "subtitles"
+                "skills";
+            }
+
             & > p {
                 grid-area: text;
                 max-width: 48ch;
@@ -41,6 +49,13 @@ import Skills from "../molecules/Skills.astro"
                     grid-area: switch;
                     justify-self: end;
                     width: fit-content;
+                }
+            }
+
+            label {
+                /* Mobile */
+                @media (max-width: 768px) {
+                    display: none;
                 }
             }
 

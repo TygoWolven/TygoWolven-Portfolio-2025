@@ -23,7 +23,7 @@
     <section class="section-inner journey-map">
         <article class="main-anchor dot">
             <p>
-                Amsterdam University <br> of Applied Sciences
+                Amsterdam University of Applied Sciences
             </p>
         </article>
         
@@ -34,17 +34,17 @@
             <article>	
                 <h3 class="left-anchor">Internship</h3>
                 <p class="date">20 weeks</p>
-                <p>Wordpress Developer at <br> Active Collective</p>
+                <p>Wordpress Developer at Active Collective</p>
             </article>
         
             <ul>
                 <h3 class="right-anchor line">Studies</h3>
                 <li class="dot line">
-                    <p>Communication and <br> Multimedia Design</p>
+                    <p>Communication and Multimedia Design</p>
                     <p class="date">2023-2024</p>
                 </li>
                 <li>
-                    <p>Frontend Design <br> and Development</p>
+                    <p>Frontend Design and Development</p>
                     <p class="date">2024-2026</p>
                 </li>
             </ul>
@@ -57,12 +57,21 @@
         margin-top: -100px;
         padding-top: 100px;
         border-radius: 100px 100px 0 0;
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            border-radius: 3rem 3rem 0 0;
+        }
         
         .journey-intro {
             h2 {
-                min-width: 18ch;
                 margin-bottom: 2rem;
+                max-width: 18ch;
             }            
+
+            p {
+                max-width: 64ch;
+            }
 
             /* Mobile */
             @media (max-width: 768px) {
@@ -110,7 +119,7 @@
 
                 /* Mobile */
                 @media (max-width: 768px) {
-                    font-size: 16px;
+                    font-size: 1rem;
                 }
             }
             
@@ -123,7 +132,7 @@
                 h3 {                    
                     position: relative;
                     width: fit-content;
-                    font-size: 18px;
+                    font-size: 1rem;
                     padding: 0.5rem 2rem;
                     border-radius: 0.75rem;
                     box-shadow: var(--smooth);
@@ -138,10 +147,15 @@
                 }
 
                 .date {
-                    font-size: 16px;
+                    font-size: 1rem;
                     font-weight: normal;
                     color: var(--regular-grey);
                     margin-top: 0.75rem;
+
+                    /* Mobile */
+                    @media (max-width: 768px) {
+                        font-size: 12px;
+                    }
 
                     & + p {
                         margin-top: 0.25rem;
@@ -233,7 +247,7 @@
                 }
             }
             
-            
+            /* Mobile */
             @media (max-width: 678px) {
                 .columns {
                     flex-direction: column;
@@ -247,7 +261,7 @@
                             width: 4px;
                             height: 60%;
                             left: calc(50% - 2px);
-                            top: calc(-100% + 60%);
+                            top: calc(-60% - 4px);
                             background: var(--light-blue);
                         }
                     }

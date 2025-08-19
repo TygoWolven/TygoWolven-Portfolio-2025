@@ -3,54 +3,23 @@
 import Layout from '../layouts/Layout.astro';
 
 // Content
+import SectionHome from '../components/organisms/SectionHome.astro';
 import SectionJourney from '../components/organisms/SectionJourney.astro';
+import Slider from '../components/organisms/Slider.astro';
 import SectionWork from '../components/organisms/SectionWork.astro';
 import SectionContact from '../components/organisms/SectionContact.astro';
-import Slider from '../components/organisms/Slider.astro';
 ---
 
 <Layout>
-	<section id="home">
-		<div class="section-inner">
-			<h1>Your <strong>Creative</strong> Frontend Designer and Developer</h1>
-			<p>Hello there! I am Tygo Wolven, welcome to my 2025 frontend portfolio! Scroll down to explore more about me, and feel free to get in touch!</p>
-		</div>
-	</section>
+
+	<SectionHome />
 
 	<SectionJourney />
 
 	<Slider />
 
 	<SectionWork />
+
 	<SectionContact />
+
 </Layout>
-
-<style>
-	#home {
-    	background: radial-gradient(
-			circle at 50% 110%,
-			var(--white),
-			var(--light-blue),
-			var(--dark-grey) 50%
-		);
-    	background-size: 200%;
-    	background-position: 50%;
-
-		.section-inner {
-			height: 95vh;
-			align-content: center;
-
-			h1 {
-				max-width: 24ch;
-				margin-bottom: 12rem;
-			}
-	
-			p {
-				max-width: 38ch;
-				font-weight: 600;
-				justify-self: end;
-				color: var(--dark-grey);
-			}
-		}
-	}
-</style>

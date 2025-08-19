@@ -41,10 +41,15 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
         padding-bottom: 2rem;
         border-radius: 100px 100px 0 0;
         background: var(--light-blue);
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            border-radius: 3rem 3rem 0 0;
+        }
         
         .top-footer {
             h3 {
-                font-size: 64px;
+                font-size: 4rem;
                 font-weight: 500;
                 letter-spacing: 1px;
                 margin-bottom: 4rem;
