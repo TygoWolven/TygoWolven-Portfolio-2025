@@ -5,17 +5,17 @@ import Skill from "../atoms/Skill.astro"
 <ul class="subtitles">
 	<li>
 		<h4 class="subtitle">
-			Subject
+			Case
 		</h4>
 	</li>
 	<li>
 		<h4 class="subtitle">
-			Experienced since
+			Service
 		</h4>
 	</li>
 	<li>
 		<h4 class="subtitle">
-			Skills
+			Framework
 		</h4>
 	</li>
 	<li>
@@ -27,34 +27,46 @@ import Skill from "../atoms/Skill.astro"
 
 <ul class="skills">
 	<Skill
-		link="web-standards"
-		title="Web Standards" 
-		skills="Responsiveness, Accessibility, Performance, Progressive Enhancement"  
-		experience="2024" 
+		link="fresk-digital"
+		title="Fresk Digital" 
+		service="Design & Development" 
+		framework="HTML, CSS, Javascript"  
 	/>
 	<Skill
-		link="coding-languages"
-		title="Coding Languages" 
-		skills="HTML, CSS, Javascript" 
-		experience="2024"     
+		link="wogo-cocktail-walks"
+		title="WOGO Cocktail Walks" 
+		service="Design & Development"    
+		framework="Sveltekit"  
 	/>
 	<Skill
-		link="frameworks"
-		title="Frameworks" 
-		skills="Vue, Svelte, Astro"  
-		experience="2024"    
+		link="de-hallen"
+		title="De Hallen" 
+		service="Design & Development"     
+		framework="HTML, CSS, Javascript" 
 	/>
 	<Skill
-		link="design-workflow"
-		title="Design Workflow" 
-		skills="Figma, Photoshop"   
-		experience="2022"   
+		link="business-news-radio"
+		title="Business News Radio" 
+		service="Design & Development"   
+		framework="HTML, CSS, Javascript"   
 	/>
 	<Skill
-		link="wordpress"
-		title="Wordpress" 
-		skills="Elementor, Toolkit, WPBakery"   
-		experience="2025"   
+		link="squadpages"
+		title="Squadpages" 
+		service="Design & Development"   
+		framework="HTML, CSS, Javascript"   
+	/>
+	<Skill
+		link="my-portfolio"
+		title="My Portfolio" 
+		service="Design & Development"   
+		framework="Astro"   
+	/>
+	<Skill
+		link="my-learning-blog"
+		title="My Learning Blog" 
+		service="Design & Development"   
+		framework="Astro"   
 	/>
 </ul>
 
@@ -62,10 +74,11 @@ import Skill from "../atoms/Skill.astro"
     ul.subtitles {
 		display: grid;
 		grid-area: subtitles;
-		grid-template-columns: 1fr 1fr 2fr 1fr;
+		border: 4px solid transparent;
+		grid-template-columns: 2fr 2fr 2fr 1fr;
 
 		padding: 0 4rem;
-		margin: 3rem 0 0.5rem 0;
+		margin-bottom: 0.5rem;
 
         /* Mobile */
         @media (max-width: 768px) {
@@ -82,7 +95,10 @@ import Skill from "../atoms/Skill.astro"
             }
 
 			&:first-of-type h4 {
-				min-width: 350px;
+				min-width: 333px;
+			}
+			&:nth-of-type(2) h4 {
+				min-width: 222px;
 			}
 			&:last-of-type h4 {
 				justify-self: end;
@@ -90,7 +106,7 @@ import Skill from "../atoms/Skill.astro"
 		}
 
         /* Mobile / Laptop */
-        @media (max-width: 968px) {
+        @media (max-width: 1050px) {
             li {
                 h4.subtitle {
                     &:first-of-type {
@@ -111,36 +127,47 @@ import Skill from "../atoms/Skill.astro"
 	ul.skills {
 		grid-area: skills;
 		justify-content: center;
-	
-        li {
-			div::before {
-				content: "";
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 50%;
-				height: 100%;
-			}
-	
+		
+		li {
 			&:nth-of-type(1n) {
 				border-radius: 1rem;
 				box-shadow: var(--smooth);
 				background: var(--medium-grey);
 				border: 4px solid var(--light-grey);
-	
-				div::before {
-					background: linear-gradient(to right, transparent, var(--medium-grey));
-				}
 			}
 	
 			&:nth-of-type(2n) {
 				background: none;
 				box-shadow: none;
-				border: none;
+				border: 4px solid transparent;
+			}
+		}
+
+	}
+
+	/* Mobile / Laptop */
+	@media (max-width: 1050px) {
+		ul.subtitles {
+			display: none;
+		}
+
+		ul.skills {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: unset;
 	
-				div::before {
-					background: linear-gradient(to right, transparent, var(--dark-grey));
-				}
+			li:nth-of-type(1n),
+			li:nth-of-type(2n) {
+				width: calc(50% - 1rem);
+				box-shadow: var(--smooth);
+				background: var(--medium-grey);
+				border: 4px solid var(--light-grey);
+			}
+			li:nth-of-type(1n) {
+				margin: 0 1rem 2rem 0;
+			}
+			li:nth-of-type(2n) {
+				margin: 0 0 2rem 1rem;
 			}
 		}
 	}

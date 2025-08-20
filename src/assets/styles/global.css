@@ -163,6 +163,7 @@ section {
 }
 
 .section-inner {
+    padding: 0;
     width: 1440px;
     justify-self: center;
 

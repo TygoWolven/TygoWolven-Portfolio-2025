@@ -55,6 +55,18 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
                 margin-bottom: 4rem;
                 text-transform: uppercase;
                 font-family: "Tan Kulture";
+                
+                /* Laptop */
+                @media (max-width: 968px) {
+                    font-size: 3rem;
+                }
+
+                /* Mobile */
+                @media (max-width: 768px) {
+                    font-size: 2rem;
+                    max-width: 8ch;
+                    line-height: 120%;
+                }
             }
 
             .back-to-top {

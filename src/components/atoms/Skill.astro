@@ -1,16 +1,14 @@
 ---
 import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
 
-const { link, title, skills, experience } = Astro.props;
+const { link, title, service, framework } = Astro.props;
 ---
 
 <li>
     <a href={ link }>
         <h3>{ title }</h3>
-        <p>{ experience }</p>
-        <div>
-            <p>{ skills }</p>
-        </div>
+        <p>{ service }</p>
+        <p>{ framework }</p>
         <DiagonalChevron color="var(--white)" />
     </a>
 </li>
@@ -22,7 +20,7 @@ const { link, title, skills, experience } = Astro.props;
             align-items: center;
 
             padding: 2rem 4rem;
-            grid-template-columns: 1fr 1fr 2fr 1fr;
+            grid-template-columns: 2fr 2fr 2fr 1fr;
 
             /* Mobile */
             @media (max-width: 768px) {
@@ -30,16 +28,17 @@ const { link, title, skills, experience } = Astro.props;
             }
 
             h3 {
-                min-width: 350px;
+                min-width: 333px;
+                font-size: 1.5rem;
+
+                /* Mobile */
+                @media (max-width: 768px) {
+                    font-size: 20px;
+                }
             }
 
-            div {
-                overflow: hidden;
-                position: relative;
-
-                p {
-                    white-space: nowrap;
-                }
+            p:first-of-type {
+                min-width: 222px;
             }
 
             svg {
@@ -57,7 +56,7 @@ const { link, title, skills, experience } = Astro.props;
         }
 
         /* Mobile / Laptop */
-        @media (max-width: 968px) {
+        @media (max-width: 1050px) {
             a {
                 display: flex;
                 justify-content: space-between;
@@ -66,7 +65,7 @@ const { link, title, skills, experience } = Astro.props;
                     min-width: unset;
                 }
 
-                p {
+                p:nth-of-type(2) {
                     display: none;
                 }
             }

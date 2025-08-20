@@ -22,7 +22,6 @@ import Skills from "../molecules/Skills.astro"
 <style> 
     #work {
         section {
-            padding: 0;
             display: grid;
             grid-template-areas: 
             "text switch"
@@ -30,7 +29,7 @@ import Skills from "../molecules/Skills.astro"
             "skills skills";
 
             /* Mobile */
-            @media (max-width: 768px) {
+            @media (max-width: 1050px) {
                 grid-template-areas:
                 "text"
                 "subtitles"
@@ -40,6 +39,7 @@ import Skills from "../molecules/Skills.astro"
             & > p {
                 grid-area: text;
                 max-width: 48ch;
+                margin-bottom: 3rem;
             }
 
             input {
@@ -54,13 +54,13 @@ import Skills from "../molecules/Skills.astro"
 
             label {
                 /* Mobile */
-                @media (max-width: 768px) {
+                @media (max-width: 1050px) {
                     display: none;
                 }
             }
 
             input[type="checkbox"]#toggle-button:checked ~ .skills {
-                  gap: 1rem;
+                gap: 1rem;
                 display: flex;
                 flex-wrap: wrap;
                 margin: 10rem 0 8rem 0;
