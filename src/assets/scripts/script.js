@@ -31,7 +31,7 @@ document.querySelectorAll('.hover-content').forEach((el, index) => {
     align(e);
 
     gsap.to(imageContainer, {
-      y: -index * 342, // Wrapper height - border width
+      y: -index * 338,
       duration: 0.4,
       ease: "power2.inOut"
     });
