@@ -4,29 +4,19 @@ import Skills from "../molecules/Skills.astro"
 
 <section id="work">
     <section class="section-inner">
-        <div class="text-wrapper">
-            <h2>Lets find out more about <strong>my projects</strong></h2>
-            <p>
-                Most of these projects were made in my journey to becoming a <strong>Creative Frontend Designer & Developer</strong> at the
-                <strong>Amsterdam University of Applied Sciences.</strong> I have been following 2 studies, that learned me how to build user friendly
-                websites using various technologies. Think about the <strong>basic coding languages, frameworks, API's, databases and loads more.</strong>
-            </p>
-        </div>
-
-        <input id="toggle-button" type="checkbox">
-		<label for="toggle-button" class="primary-button toggle">
-			<span>List</span>
-			<span>Buttons</span>
-		</label>
-
+        <blockquote>
+            Im building for the internet to become <strong>faster</strong>, more <strong>accessible</strong>, and more <strong>resilent</strong> — where 
+            responsiveness, accessibility, performance and progressive enhancement come together to 
+            create a <strong>better experience</strong> for every user. 
+        </blockquote>
         <Skills />
     </section>
 </section>
 
 <style> 
     #work {
-        margin-top: -100px;
-        padding-top: 100px;
+        margin-top: -124px;
+        padding-top: 124px;
         border-radius: 100px 100px 0 0;
 
         /* Mobile */
@@ -34,106 +24,16 @@ import Skills from "../molecules/Skills.astro"
             border-radius: 3rem 3rem 0 0;
         }
 
-        section {
-            display: grid;
-            grid-template-areas: 
-            "text switch"
-            "subtitles subtitles"
-            "skills skills";
+        blockquote {
+            font-size: 2rem;
+            max-width: 36ch;
+            text-align: center;
+            justify-self: center;
+            margin-bottom: 124px;
 
             /* Mobile */
-            @media (max-width: 1050px) {
-                grid-template-areas:
-                "text"
-                "subtitles"
-                "skills";
-            }
-
-            .text-wrapper {
-                grid-area: text;
-
-                h2 {
-                    max-width: 18ch;
-                }
-                
-                p {
-                    max-width: 64ch;
-                    margin: 1rem 0 3rem 0;
-                }
-            }
-
-            input {
-                display: none;
-        
-                & + label {
-                    grid-area: switch;
-                    align-self: end;
-                    justify-self: end;
-                    width: fit-content;
-                    margin-bottom: 3rem;
-                }
-            }
-
-            label {
-                /* Mobile */
-                @media (max-width: 1050px) {
-                    display: none;
-                }
-            }
-
-            input[type="checkbox"]#toggle-button:checked ~ .skills {
-                gap: 1rem;
-                display: flex;
-                flex-wrap: wrap;
-                margin: 10rem 0 8rem 0;
-                transform: skew(20deg) skewY(-10deg);
-        
-                li {
-                    box-shadow: none;
-                    position: relative;
-                    background: var(--medium-grey);
-                    transition: transform var(--quick);
-                    border: 4px solid var(--light-grey);
-        
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        top: 12px;
-                        left: -12px;
-        
-                        z-index: -1;
-                        border-radius: 1rem;
-                        transition: var(--quick);
-                        background: var(--light-grey);
-                    }
-        
-                    a {
-                        border-radius: 1rem;
-                        grid-template-columns: unset;
-                        background: var(--medium-grey);
-        
-                        h3 {
-                            min-width: unset;
-                        }
-        
-                        p, svg {
-                            display: none;
-                        }
-                    }
-        
-                    &:hover {
-                        transform: translateX(-5px) translateY(5px);
-                        
-                        &::after {
-                            transform: translateX(5px) translateY(-5px);
-                        }
-                    }
-                }
-            }
-            input[type="checkbox"]#toggle-button:checked ~ .subtitles {
-                display: none;
+            @media (max-width: 768px) {
+                font-size: 1.5rem;
             }
         }
     }
