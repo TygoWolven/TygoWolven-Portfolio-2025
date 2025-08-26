@@ -27,55 +27,62 @@ import Skill from "../atoms/Skill.astro"
 
 <div class="hover-container">
 	<div class="image-container">
-		<img class="image-1" 	src="/images/Fresk-Digital.png" 		alt="Preview of the 'Fresk Digital' project.">
-		<img class="image-2" 	src="/images/WOGO.png" 					alt="Preview of the 'WOGO Cocktail Walks' project.">
-		<img class="image-3" 	src="/images/De-Hallen.png" 			alt="Preview of the 'de Hallen' project.">
-		<img class="image-4" 	src="/images/Business-News-Radio.png" 	alt="Preview of the 'Business News Radio' project.">
-		<img class="image-5" 	src="/images/Squadpage.png"	 			alt="Preview of the 'Squadpage' project.">
-		<img class="image-6" 	src="/images/Portfolio.png" 			alt="Preview of the 'Learning Blog' project.">
-		<img class="image-7" 	src="/images/Learning-Blog.png" 		alt="Preview of the 'Portfolio' project.">
+		<img src="/images/Fresk-Digital.png" 		alt="Preview of the 'Fresk Digital' project.">
+		<img src="/images/WOGO.png" 				alt="Preview of the 'WOGO Cocktail Walks' project.">
+		<img src="/images/De-Hallen.png" 			alt="Preview of the 'de Hallen' project.">
+		<img src="/images/Business-News-Radio.png" 	alt="Preview of the 'Business News Radio' project.">
+		<img src="/images/Squadpage.png"	 		alt="Preview of the 'Squadpage' project.">
+		<img src="/images/Portfolio.png" 			alt="Preview of the 'Learning Blog' project.">
+		<img src="/images/Learning-Blog.png" 		alt="Preview of the 'Portfolio' project.">
 	</div>
 </div>
 
 <ul class="skills">
 	<Skill
 		link="fresk-digital"
+		image="/images/Fresk-Digital.png"
 		title="Fresk Digital" 
 		service="Design & Development" 
 		framework="HTML, CSS, Javascript"  
 	/>
 	<Skill
 		link="wogo-cocktail-walks"
+		image="/images/WOGO.png"
 		title="WOGO Cocktail Walks" 
 		service="Design & Development"    
 		framework="Sveltekit"  
 	/>
 	<Skill
 		link="de-hallen"
+		image="/images/De-Hallen.png"
 		title="De Hallen" 
 		service="Design & Development"     
 		framework="HTML, CSS, Javascript" 
 	/>
 	<Skill
 		link="business-news-radio"
+		image="/images/Business-News-Radio.png"
 		title="Business News Radio" 
 		service="Design & Development"   
 		framework="HTML, CSS, Javascript"   
 	/>
 	<Skill
-		link="squadpages"
-		title="Squadpages" 
+		link="squadpage"
+		image="/images/Squadpage.png"
+		title="Squadpage" 
 		service="Design & Development"   
 		framework="HTML, CSS, Javascript"   
 	/>
 	<Skill
 		link="my-portfolio"
+		image="/images/Portfolio.png"
 		title="My Portfolio" 
 		service="Design & Development"   
 		framework="Astro"   
 	/>
 	<Skill
 		link="my-learning-blog"
+		image="/images/Learning-Blog.png"
 		title="My Learning Blog" 
 		service="Design & Development"   
 		framework="Astro"   
@@ -162,63 +169,108 @@ import Skill from "../atoms/Skill.astro"
 				padding: 0 1rem;
 				object-fit: contain;
 
-				&.image-1 {
+				&:nth-of-type(1) {
 					background: #E2D9ED;
 				}
-				&.image-2 {
+				&:nth-of-type(2) {
 					background: #F7E1D7;
 				}
-				&.image-3 {
+				&:nth-of-type(3) {
 					background: #B2B2A5;
 				}
-				&.image-4 {
+				&:nth-of-type(4) {
 					background: #FAF3DC;
 				}
-				&.image-5 {
+				&:nth-of-type(5) {
 					background: #E6E6E6;
 				}
-				&.image-6 {
+				&:nth-of-type(6) {
 					background: #D5DFF3;
 				}
-				&.image-7 {
+				&:nth-of-type(7) {
 					background: #CFC4B8;
 				}
 			}
 		}
 	}
-
+	
 	ul.skills {
 		grid-area: skills;
 		justify-content: center;
 		
 		li {
+			img {
+				width: 100%;
+				aspect-ratio: 1;
+				padding: 0 1rem;
+				object-fit: contain;
+			}
+			
 			&:nth-of-type(1n) {
 				border-radius: 1rem;
 				box-shadow: var(--smooth);
 				background: var(--medium-grey);
 				border: 4px solid var(--light-grey);
 			}
-	
+			
 			&:nth-of-type(2n) {
 				background: none;
 				box-shadow: none;
 				border: 4px solid transparent;
 			}
 		}
-
 	}
-
-	/* Mobile / Laptop */
+	
+	ul.skills {
+		li:nth-of-type(1) {
+			img {
+				background: #E2D9ED;
+			}
+		}
+		li:nth-of-type(2) {
+			img {
+				background: #F7E1D7;
+			}
+		}
+		li:nth-of-type(3) {
+			img {
+				background: #B2B2A5;
+			}
+		}
+		li:nth-of-type(4) {
+			img {
+				background: #FAF3DC;
+			}
+		}
+		li:nth-of-type(5) {
+			img {
+				background: #E6E6E6;
+			}
+		}
+		li:nth-of-type(6) {
+			img {
+				background: #D5DFF3;
+			}
+		}
+		li:nth-of-type(7) {
+			img {
+				background: #CFC4B8;
+			}
+		}
+	}
+	
+	
+	/* Laptop */
 	@media (max-width: 1050px) {
 		ul.subtitles {
 			display: none;
 		}
-
+		
 		ul.skills {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: unset;
-	
+			
 			li:nth-of-type(1n),
 			li:nth-of-type(2n) {
 				width: calc(50% - 1rem);
@@ -231,6 +283,32 @@ import Skill from "../atoms/Skill.astro"
 			}
 			li:nth-of-type(2n) {
 				margin: 0 0 2rem 1rem;
+			}
+		}
+	}
+	
+	/* Mobile */
+	@media (max-width: 768px) {
+		ul.skills {
+			li:nth-of-type(1n),
+			li:nth-of-type(2n) {
+				width: calc(50% - 0.5rem);
+			}
+			li:nth-of-type(1n) {
+				margin: 0 0.5rem 1rem 0;
+			}
+			li:nth-of-type(2n) {
+				margin: 0 0 1rem 0.5rem;
+			}
+		}
+	}
+	
+	@media (max-width: 606px) {
+		ul.skills {
+			li:nth-of-type(1n),
+			li:nth-of-type(2n) {
+				width: 100%;
+				margin: 0 0 1rem 0;
 			}
 		}
 	}

@@ -1,15 +1,18 @@
 ---
 import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
 
-const { link, title, service, framework } = Astro.props;
+const { link, image, title, service, framework } = Astro.props;
 ---
 
 <li class="hover-content">
     <a href={ link }>
+        <img src={ image } alt="Preview of `title`">
         <h3>{ title }</h3>
-        <p>{ service }</p>
-        <p>{ framework }</p>
-        <DiagonalChevron color="var(--white)" />
+        <div class="flex justify">
+            <p>{ service }</p>
+            <p>{ framework }</p>
+            <DiagonalChevron color="var(--white)" />
+        </div>
     </a>
 </li>
 
@@ -22,19 +25,13 @@ const { link, title, service, framework } = Astro.props;
             padding: 2rem 4rem;
             grid-template-columns: 2fr 2fr 2fr 1fr;
 
-            /* Mobile */
-            @media (max-width: 768px) {
-                padding: 2rem;
+            img {
+                display: none;
             }
 
             h3 {
                 min-width: 333px;
                 font-size: 1.5rem;
-
-                /* Mobile */
-                @media (max-width: 768px) {
-                    font-size: 20px;
-                }
             }
 
             p:first-of-type {
@@ -55,19 +52,45 @@ const { link, title, service, framework } = Astro.props;
             }
         }
 
-        /* Mobile / Laptop */
+        /* Mobile */
+        @media (max-width: 768px) {
+            a {
+                padding: 2rem;
+
+                h3 {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        /* Laptop */
         @media (max-width: 1050px) {
             a {
                 display: flex;
-                justify-content: space-between;
+                padding: 1rem;
+                flex-direction: column;
+
+                img {
+                    display: block;
+                    border-radius: 0.5rem;
+                }
 
                 h3 {
+                    width: 100%;
                     min-width: unset;
+                    margin: 2rem 0 0.5rem 0;
                 }
 
-                p:nth-of-type(2) {
-                    display: none;
+                div {
+                    width: 100%;
+                    padding-top: 1rem;
+                    border-top: 2px solid var(--light-grey);
+
+                    p:nth-of-type(2) {
+                        display: none;
+                    }
                 }
+
             }
         }
     }
