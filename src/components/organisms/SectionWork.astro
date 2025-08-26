@@ -5,10 +5,11 @@ import Skills from "../molecules/Skills.astro"
 <section id="work">
     <section class="section-inner">
         <div class="text-wrapper">
-            <h2>Check out <strong>these projects</strong></h2>
+            <h2>Lets find out more about <strong>my projects</strong></h2>
             <p>
-                Now you might wonder, <strong>why</strong> would you need me, instead of someone else? 
-                I will explain that by splitting up <strong>my skills</strong> into the next parts.
+                Most of these projects were made in my journey to becoming a <strong>Creative Frontend Designer & Developer</strong> at the
+                <strong>Amsterdam University of Applied Sciences.</strong> I have been following 2 studies, that learned me how to build user friendly
+                websites using various technologies. Think about the <strong>basic coding languages, frameworks, API's, databases and loads more.</strong>
             </p>
         </div>
 
@@ -24,6 +25,15 @@ import Skills from "../molecules/Skills.astro"
 
 <style> 
     #work {
+        margin-top: -100px;
+        padding-top: 100px;
+        border-radius: 100px 100px 0 0;
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            border-radius: 3rem 3rem 0 0;
+        }
+
         section {
             display: grid;
             grid-template-areas: 
@@ -42,9 +52,13 @@ import Skills from "../molecules/Skills.astro"
             .text-wrapper {
                 grid-area: text;
 
+                h2 {
+                    max-width: 18ch;
+                }
+                
                 p {
-                    max-width: 48ch;
-                    margin-bottom: 3rem;
+                    max-width: 64ch;
+                    margin: 1rem 0 3rem 0;
                 }
             }
 
@@ -53,8 +67,10 @@ import Skills from "../molecules/Skills.astro"
         
                 & + label {
                     grid-area: switch;
+                    align-self: end;
                     justify-self: end;
                     width: fit-content;
+                    margin-bottom: 3rem;
                 }
             }
 
