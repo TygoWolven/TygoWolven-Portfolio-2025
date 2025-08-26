@@ -1,64 +1,3 @@
-/* Bold Text */
-strong {
-    font-size: inherit;
-    font-family: inherit;
-    color: var(--light-blue);
-}
-
-/* Regular Button | Toggle Button */
-.primary-button {
-    background: var(--light-blue);
-    padding: 0.5rem 1.5rem;
-    font-weight: 600;
-    border-radius: 2rem;
-    border: 4px solid var(--dark-blue);
-    
-    &.toggle {
-        display: grid;
-        height: fit-content;
-        
-        padding: 0.5rem 0;
-        grid-template-columns: 1fr 1fr;
-        background: linear-gradient(to left, var(--light-blue) 50%, var(--medium-blue) 50%);
-        
-        span {
-            user-select: none;
-            justify-self: center;
-            padding: 0 1.5rem;
-            
-            &:nth-of-type(1) {
-                opacity: 0.6;
-            }
-        }
-        
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
-
-input[type="checkbox"]:checked + .primary-button.toggle {
-    background: linear-gradient(to right, var(--light-blue) 50%, var(--medium-blue) 50%);
-    
-    span:nth-of-type(1) {
-        opacity: 1;
-    }
-    span:nth-of-type(2) {
-        opacity: 0.6;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 /* Fonts */
 @font-face {
     font-family: "Montserrat";
@@ -74,20 +13,20 @@ input[type="checkbox"]:checked + .primary-button.toggle {
 :root {
     /* Colors */
     --white: rgb(230, 230, 230);
-
+    
     --light-grey: rgb(40, 40, 40);
     --medium-grey: rgb(32, 32, 32);
     --regular-grey: rgb(132, 132, 132);
     --dark-grey: rgb(20, 20, 20);
-
+    
     --light-blue: rgb(130, 150, 200);
     --medium-blue: rgb(90, 110, 160);
     --dark-blue: rgb(70, 90, 140);
-
+    
     /* Transitions */
     --quick: 0.2s ease;
     --slow: 0.4s ease;
-
+    
     /* Box-shadows */
     --smooth: 5px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
@@ -99,18 +38,18 @@ input[type="checkbox"]:checked + .primary-button.toggle {
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-
+    
     font-size: 16px;
     color: var(--white);
 	font-family: Montserrat, 
-                 Inter, 
-                 Roboto, 
-                 'Helvetica Neue', 
-                 'Arial Nova', 
-                 'Nimbus Sans', 
-                 Arial, 
-                 sans-serif;
-
+    Inter, 
+    Roboto, 
+    'Helvetica Neue', 
+    'Arial Nova', 
+    'Nimbus Sans', 
+    Arial, 
+    sans-serif;
+    
     &::-webkit-scrollbar {
         display: none;
     }
@@ -155,7 +94,7 @@ h3 {
 section {
     padding: 2rem;
     background: var(--dark-grey);
-
+    
     /* Mobile */
     @media (max-width: 768px) {
         padding: 1rem;
@@ -166,11 +105,28 @@ section {
     padding: 0;
     width: 1440px;
     justify-self: center;
-
+    
     /* Laptop */
     @media (max-width: calc(1440px + 4rem)) {
         width: 100%;
     }
+}
+
+/* Buttons */
+.primary-button {
+    font-weight: 600;
+    user-select: none;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background: var(--light-blue);
+    border: 4px solid var(--dark-blue);
+}
+
+/* Bold Text */
+strong {
+    font-size: inherit;
+    font-family: inherit;
+    color: var(--light-blue);
 }
 
 /* Reusable Classes */

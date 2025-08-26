@@ -1,0 +1,51 @@
+---
+// Icons
+import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
+
+// Dynamic Content
+const { link, image, title, framework } = Astro.props;
+---
+
+<li>
+    <a href={ link }>
+        <img src={ image } alt="Preview of `title`">
+        <h3>{ title }</h3>
+        <div>
+            <p>{ framework }</p>
+            <DiagonalChevron color="var(--white)" />
+        </div>
+    </a>
+</li>
+
+<style>
+    li {
+        a {
+            display: flex;
+            flex-direction: column;
+
+            h3 {
+                margin: 2rem 0 1rem 0;
+            }
+
+            div {
+                display: flex;
+                padding-top: 1rem;
+                justify-content: space-between;
+                border-top: 2px solid var(--light-grey);
+
+                svg {
+                    transition: var(--quick);
+                }
+            }
+
+        }
+
+        &:hover {
+            a {
+                svg {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+</style>

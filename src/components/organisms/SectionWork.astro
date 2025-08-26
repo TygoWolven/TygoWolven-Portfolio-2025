@@ -1,5 +1,5 @@
 ---
-import Skills from "../molecules/Skills.astro"
+import Cases from "../molecules/Cases.astro"
 ---
 
 <section id="work">
@@ -9,7 +9,12 @@ import Skills from "../molecules/Skills.astro"
             responsiveness, accessibility, performance and progressive enhancement come together to 
             create a <strong>better experience</strong> for every user. 
         </blockquote>
-        <Skills />
+
+        <Cases />
+
+        <a href="/work" class="primary-button">
+            <span>See all my work</span>
+        </a>
     </section>
 </section>
 
@@ -17,12 +22,7 @@ import Skills from "../molecules/Skills.astro"
     #work {
         margin-top: -124px;
         padding-top: 124px;
-        border-radius: 100px 100px 0 0;
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            border-radius: 3rem 3rem 0 0;
-        }
+        border-radius: 124px 124px 0 0;
 
         blockquote {
             font-size: 2rem;
@@ -34,6 +34,12 @@ import Skills from "../molecules/Skills.astro"
             /* Mobile */
             @media (max-width: 768px) {
                 font-size: 1.5rem;
+            }
+        }
+
+        ul.cases {
+            li:nth-of-type(2) ~ li {
+                display: none;
             }
         }
     }
