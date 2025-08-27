@@ -112,16 +112,6 @@ section {
     }
 }
 
-/* Buttons */
-.primary-button {
-    font-weight: 600;
-    user-select: none;
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    background: var(--light-blue);
-    border: 4px solid var(--dark-blue);
-}
-
 /* Bold Text */
 strong {
     font-size: inherit;
@@ -135,4 +125,57 @@ strong {
 }
 .justify {
     justify-content: space-between;
+}
+
+/* Buttons */
+.primary-button {
+    z-index: 1;
+    display: flex;
+    user-select: none;
+    position: relative;
+    justify-self: center;
+    font-weight: 600;
+    
+    span {
+        padding: 1.5rem 3rem;
+        border-radius: 4rem;
+        background: var(--light-blue);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        padding: 4px;
+        border-radius: 4rem;
+        background-image: conic-gradient(
+            from var(--angle),
+            var(--dark-blue) 25%,
+            var(--white),
+            var(--dark-blue) 75%
+        );
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        animation: 3s spinBorder linear infinite;
+    }
+}
+        
+/* Property for the gradient-border animation */
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Keyframe for the gradient-border animation */
+@keyframes spinBorder {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }

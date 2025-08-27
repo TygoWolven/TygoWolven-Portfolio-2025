@@ -13,7 +13,9 @@ import Cases from "../molecules/Cases.astro"
         <Cases />
 
         <a href="/work" class="primary-button">
-            <span>See all my work</span>
+            <span>
+                More featured school-projects
+            </span>
         </a>
     </section>
 </section>
@@ -40,6 +42,17 @@ import Cases from "../molecules/Cases.astro"
         ul.cases {
             li:nth-of-type(2) ~ li {
                 display: none;
+            }
+        }
+
+        .primary-button {
+            &::before {
+                content: "7";
+                position: absolute;
+                font-size: 12px;
+                opacity: 0.5;
+                right: 2.3rem;
+                top: 1.2rem;
             }
         }
     }

@@ -6,12 +6,33 @@ import Cases from "../components/molecules/Cases.astro";
 <Layout>
     <section id="case">
         <section class="section-inner">
-            <h1>All of my highlighted work</h1>
+            <h1>What have I created during my studies?</h1>
+
             <Cases />
+
+            <a href="https://github.com/TygoWolven?tab=repositories" class="primary-button">
+                <span>
+                    All projects on Github
+                </span>
+            </a>
         </section>
     </section>
 </Layout>
 
 <style>
+    h1 {
+        text-transform: inherit;
+        font-family: Montserrat;
+    }
 
+    .primary-button {
+        &::before {
+            content: "49";
+            position: absolute;
+            font-size: 12px;
+            right: 1.8rem;
+            opacity: 0.5;
+            top: 1.2rem;
+        }
+    }
 </style>
