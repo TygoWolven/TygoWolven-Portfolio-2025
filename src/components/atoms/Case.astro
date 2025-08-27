@@ -9,7 +9,7 @@ const { link, image, title, framework } = Astro.props;
 <li>
     <a href={ link }>
         <img src={ image } alt="Preview of `title`">
-        <h3>{ title }</h3>
+        <h2>{ title }</h2>
         <div>
             <p>{ framework }</p>
             <DiagonalChevron color="var(--white)" />
@@ -23,7 +23,8 @@ const { link, image, title, framework } = Astro.props;
             display: flex;
             flex-direction: column;
 
-            h3 {
+            h2 {
+                font-weight: 600;
                 margin: 2rem 0 1rem 0;
             }
 

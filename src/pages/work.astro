@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Cases from "../components/molecules/Cases.astro";
+import NextCase from "../components/atoms/NextCase.astro";
 ---
 
 <Layout>
     <section id="case">
         <section class="section-inner">
-            <h1>What have I created during my studies?</h1>
+            <h1>What have I <strong>created</strong> during my studies?</h1>
 
             <Cases />
 
@@ -17,12 +18,16 @@ import Cases from "../components/molecules/Cases.astro";
             </a>
         </section>
     </section>
+    
+    <NextCase />
 </Layout>
 
 <style>
     h1 {
         text-transform: inherit;
         font-family: Montserrat;
+        margin: 196px 0 96px 0;
+        max-width: 18ch;
     }
 
     .primary-button {
