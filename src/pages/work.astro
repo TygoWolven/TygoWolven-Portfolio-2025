@@ -7,7 +7,7 @@ import NextCase from "../components/atoms/NextCase.astro";
 <Layout>
     <section id="case">
         <section class="section-inner">
-            <h1>What have I <strong>created</strong> during my studies?</h1>
+            <h1>What have I created during my studies?</h1>
 
             <Cases />
 
@@ -31,6 +31,8 @@ import NextCase from "../components/atoms/NextCase.astro";
     }
 
     .primary-button {
+        margin-bottom: 64px;
+        
         &::before {
             content: "49";
             position: absolute;
@@ -38,6 +40,7 @@ import NextCase from "../components/atoms/NextCase.astro";
             right: 1.8rem;
             opacity: 0.5;
             top: 1.2rem;
+            z-index: 2;
         }
     }
 </style>

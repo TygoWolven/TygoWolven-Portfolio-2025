@@ -1,30 +1,63 @@
 <section id="home">
     <section class="section-inner">
 		<h1>
-            Your <strong>Creative</strong> Frontend Designer and Developer
+            Web Designer <br> and <i>Developer</i>
         </h1>
+
+		<div></div>
     </section>
 </section>
 
 <style>
 	#home {
-    	background: radial-gradient(
-			circle at 50% 110%,
-			var(--white),
-			var(--light-blue),
-			var(--dark-grey) 50%
-		);
-    	background-size: 200%;
-    	background-position: 50%;
+		&::before {
+			content: "";
+    		position: absolute;
+			z-index: 0;
+			inset: 0;
+    		background: radial-gradient(
+    		    ellipse at 50% -60%,
+    		    var(--white) 20%,
+    		    var(--light-blue),
+    		    var(--dark-grey) 50%
+    		);
+    		background-size: 200%;
+    		background-position: 50%;
+    		filter: blur(100px);
+		}
 
 		.section-inner {
-			height: 95vh;
-			align-content: center;
+			position: relative;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
             background: transparent;
 
 			h1 {
-				max-width: 24ch;
-				margin-bottom: 18vh;
+				margin-bottom: calc(4rem + 8px);
+				margin-top: 196px;
+			}
+
+			div {
+				width: 1px;
+				height: 200px;
+				position: relative;
+				background: linear-gradient(
+					var(--light-blue),
+					transparent
+				);
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: calc(-10px - 4px);
+					left: -8px;
+					width: 10px;
+					aspect-ratio: 1;
+					border-radius: 50%;
+					border: 4px solid var(--light-blue);
+				}
 			}
 		}
 	}

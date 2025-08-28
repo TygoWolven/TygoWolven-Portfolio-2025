@@ -35,6 +35,7 @@
 * {
     margin: 0;
     padding: 0;
+    z-index: 1;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
@@ -61,32 +62,25 @@ body {
 h1,
 h2,
 h3 {
+    font-weight: 600;
     line-height: 120%;
 }
 h1 {
     font-size: 4rem;
-    font-weight: 500;
-    letter-spacing: 2px; 
-    font-family: "Tan Kulture";
-    text-transform: uppercase;
 }
 h2 {
     font-size: 2rem;
 }
 h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
-/* Mobile Headings */
 @media (max-width: 768px) {
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     h2 {
-        font-size: 2rem;
-    }
-    h3 {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -115,8 +109,12 @@ section {
 /* Bold Text */
 strong {
     font-size: inherit;
-    font-family: inherit;
     color: var(--light-blue);
+}
+
+/* Italic Text */
+i {
+    font-size: inherit;
 }
 
 /* Reusable Classes */
@@ -129,7 +127,6 @@ strong {
 
 /* Buttons */
 .primary-button {
-    z-index: 1;
     display: flex;
     user-select: none;
     position: relative;
