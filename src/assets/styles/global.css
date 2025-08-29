@@ -39,6 +39,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    transition: var(--quick);
     
     font-size: 16px;
     color: var(--white);
@@ -129,12 +130,12 @@ i {
 .primary-button {
     font-weight: 600;
 
+    margin: auto;
     display: flex;
     user-select: none;
     position: relative;
-    justify-self: center;
     max-width: fit-content;
-    
+
     span {
         padding: 1.5rem 3rem;
         border-radius: 4rem;
