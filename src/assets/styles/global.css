@@ -127,11 +127,13 @@ i {
 
 /* Buttons */
 .primary-button {
+    font-weight: 600;
+
     display: flex;
     user-select: none;
     position: relative;
     justify-self: center;
-    font-weight: 600;
+    max-width: fit-content;
     
     span {
         padding: 1.5rem 3rem;
@@ -144,7 +146,6 @@ i {
         position: absolute;
         height: 100%;
         width: 100%;
-        z-index: -1;
         padding: 4px;
         border-radius: 4rem;
         background-image: conic-gradient(
@@ -155,7 +156,7 @@ i {
         );
         top: 50%;
         left: 50%;
-        translate: -50% -50%;
+        transform: translate(-50%, -50%);
         animation: 3s spinBorder linear infinite;
     }
 }
