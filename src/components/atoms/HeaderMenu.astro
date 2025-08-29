@@ -1,0 +1,89 @@
+<input id="menu-button" type="checkbox">
+<label for="menu-button"></label>     
+
+<ul class="menu">
+    <li>
+        <a href="/">Home</a>
+    </li>
+    <li>
+        <a href="#journey">Journey</a>
+    </li>
+    <li>
+        <a href="#work">Work</a>
+    </li>
+    <li>
+        <a href="#contact">Contact</a>
+    </li>
+</ul>
+
+<style>
+    .menu {
+        display: flex;
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        gap: 2rem;
+        width: 200%;
+        height: 100vh;
+        margin-top: -2rem;
+        user-select: none;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-25%);
+        background: var(--dark-grey);
+        
+        li a {
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: "Tan Kulture";
+        }
+    }
+
+    input[type="checkbox"] {
+        display: none;
+
+        &:checked {
+            & ~ label {
+                &::before {
+                    rotate: 10deg;
+                    transform: translateY(calc(0.5rem - 3px));
+                    transition: transform var(--quick),
+                                rotate var(--quick) 0.3s;
+                }
+                &::after {
+                    rotate: -10deg;
+                    transform: translateY(-0.5rem);
+                    transition: transform var(--quick),
+                                rotate var(--quick) 0.3s;                    
+                }
+            }
+            & ~ ul.menu {
+                display: flex;
+            }
+        }
+    }
+
+    label {
+        width: 7rem;
+        height: 1rem;
+        z-index: 3;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            transition: var(--quick);
+            background: var(--white);
+            width: 100%;
+            height: 3px;
+        }
+        &::after {
+            bottom: 0;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+</style>

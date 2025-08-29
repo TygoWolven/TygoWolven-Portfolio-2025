@@ -32,15 +32,17 @@ import NextCase from "../components/atoms/NextCase.astro";
 
     .primary-button {
         margin-bottom: 64px;
-        
-        &::before {
-            content: "49";
-            position: absolute;
-            font-size: 12px;
-            right: 1.8rem;
-            opacity: 0.5;
-            top: 1.2rem;
-            z-index: 2;
+
+        span {
+            &::before {
+                content: "49";
+                position: absolute;
+                font-size: 12px;
+                right: 1.8rem;
+                opacity: 0.5;
+                top: 1.2rem;
+                z-index: 2;
+            }
         }
     }
 </style>

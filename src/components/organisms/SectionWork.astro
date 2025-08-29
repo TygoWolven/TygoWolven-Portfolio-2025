@@ -46,14 +46,16 @@ import Cases from "../molecules/Cases.astro"
         .primary-button {
             margin-bottom: 64px;
             
-            &::before {
-                content: "7";
-                position: absolute;
-                font-size: 12px;
-                opacity: 0.5;
-                right: 2.3rem;
-                top: 1.2rem;
-                z-index: 2;
+            span {
+                &::before {
+                    content: "7";
+                    position: absolute;
+                    font-size: 12px;
+                    opacity: 0.5;
+                    right: 2.3rem;
+                    top: 1.2rem;
+                    z-index: 2;
+                }
             }
         }
     }
