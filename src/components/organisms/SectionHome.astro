@@ -1,10 +1,25 @@
+---
+import Star from "../atoms/icons/Star.astro"
+---
+
 <section id="home">
     <section class="section-inner">
 		<h1>
-            Web Designer <br> and <i>Developer</i>
-        </h1>
+			Tygo <br> 
+			Wolven
 
-		<div></div>
+			<div>
+				<img src="/images/Tygo-Wolven-Portrait.png" alt="">
+			</div>
+		</h1>
+
+		<Star />
+
+		<blockquote>
+            I'm Tygo Wolven — a <strong>junior</strong> frontend designer & devloper 
+			<strong>passionately</strong> creating digital experiences to make the web 
+			a <strong>better place</strong> for <strong>everyone</strong>.
+        </blockquote>
     </section>
 </section>
 
@@ -15,50 +30,101 @@
     		position: absolute;
 			z-index: 0;
 			inset: 0;
+			inset: -2rem;
     		background: radial-gradient(
-    		    ellipse at 50% -60%,
-    		    var(--white) 20%,
+    		    ellipse at 50% -70%,
+    		    var(--white) 25%,
     		    var(--light-blue),
     		    var(--dark-grey) 50%
-    		);
-    		background-size: 200%;
-    		background-position: 50%;
-    		filter: blur(100px);
-		}
+				);
+				background-size: 200%;
+				background-position: 50%;
+				filter: blur(50px);
+			}
+			
 
 		.section-inner {
-			position: relative;
 			display: flex;
 			align-items: center;
 			flex-direction: column;
-			justify-content: center;
-            background: transparent;
 
 			h1 {
-				margin-bottom: calc(4rem + 8px);
-				margin-top: 196px;
-			}
-
-			div {
-				width: 1px;
-				height: 200px;
+				font-family: "Tan Kulture";
+				text-transform: uppercase;
 				position: relative;
-				background: linear-gradient(
-					var(--light-blue),
-					transparent
-				);
+				text-align: center;
+				font-size: 196px;
+				font-weight: 500;
+				margin-top: 128px;
+				letter-spacing: 1px;
 
-				&::before {
-					content: "";
+				/* If the property is supported, trim down the heading so the margins are even. */
+				@supports (text-box-trim: trim-both) {
+					text-box-trim: trim-both;
+					text-box-edge: cap alphabetic;
+				}
+
+				/* Mobile */
+            	@media (max-width: 768px) {
+            	    font-size: 6rem;
+            	}
+
+				div {
+					display: flex;
+					overflow: hidden;
 					position: absolute;
-					top: calc(-10px - 4px);
-					left: -8px;
-					width: 10px;
-					aspect-ratio: 1;
-					border-radius: 50%;
-					border: 4px solid var(--light-blue);
+					width: fit-content;
+					height: 66%;	
+
+					top: 17%;
+					left: 50%;
+					transform: translateX(-50%);
+
+					border: 4px solid var(--dark-blue);	
+					background: var(--light-blue);	
+					border-radius: 10rem;
+
+					img {
+						padding-top: 0.5rem;
+						mix-blend-mode: hard-light;
+						transform: translateX(-0.2rem);
+					}
 				}
 			}
+
+			svg {
+				/* Compensate the top and bottom margin, because of the bad heading-trim. */
+				margin: 5rem 0 6rem 0;
+
+				/* If the property is supported, we don't have to compensate the margins to be even. */
+				@supports (text-box-trim: trim-both) {
+					margin: 6rem 0;
+				}
+
+				/* Mobile */
+				@media (max-width: 768px) {
+					scale: 0.75;
+					margin: 2rem 0 3rem 0;
+
+					/* If the property is supported, we don't have to compensate the margins to be even. */
+					@supports (text-box-trim: trim-both) {
+						margin: 3rem 0;
+					}
+				}
+			}
+
+			blockquote {
+				max-width: 40ch;
+				font-size: 24px;
+            	text-align: center;
+				margin-bottom: 64px;
+
+            	/* Mobile */
+            	@media (max-width: 768px) {
+            	    font-size: 18px;
+            	    text-align: left;
+            	}
+        	}
 		}
 	}
 </style>

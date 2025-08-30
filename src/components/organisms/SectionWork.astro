@@ -4,12 +4,6 @@ import Cases from "../molecules/Cases.astro"
 
 <section id="work">
     <section class="section-inner">
-        <blockquote>
-            Im building for the web to become <strong>faster</strong>, more <strong>accessible</strong>, and more <strong>resilent</strong> — where 
-            responsiveness, accessibility, performance and progressive enhancement come together to 
-            create a <strong>better experience</strong> for every user. 
-        </blockquote>
-
         <Cases />
 
         <a href="/work" class="primary-button">
@@ -22,23 +16,6 @@ import Cases from "../molecules/Cases.astro"
 
 <style> 
     #work {
-        blockquote {
-            font-size: 2rem;
-            max-width: 36ch;
-            
-            position: relative;
-            text-align: center;
-
-            margin: auto;
-            margin-bottom: 124px;
-
-            /* Mobile */
-            @media (max-width: 768px) {
-                font-size: 1.3rem;
-                text-align: left;
-            }
-        }
-
         ul.cases {
             li:nth-of-type(2) ~ li {
                 display: none;
