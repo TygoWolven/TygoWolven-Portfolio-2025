@@ -6,9 +6,9 @@ import Cases from "../molecules/Cases.astro"
     <section class="section-inner">
         <Cases />
 
-        <a href="/work" class="primary-button">
+        <a href="https://github.com/TygoWolven?tab=repositories" class="primary-button">
             <span>
-                More featured school-projects
+                Check out all my work on Github
             </span>
         </a>
     </section>
@@ -16,22 +16,16 @@ import Cases from "../molecules/Cases.astro"
 
 <style> 
     #work {
-        ul.cases {
-            li:nth-of-type(2) ~ li {
-                display: none;
-            }
-        }
-
         .primary-button {
             margin-bottom: 64px;
-            
+
             span {
                 &::before {
-                    content: "7";
+                    content: "48";
                     position: absolute;
                     font-size: 12px;
                     opacity: 0.5;
-                    right: 2.3rem;
+                    right: 1.8rem;
                     top: 1.2rem;
                     z-index: 2;
                 }
