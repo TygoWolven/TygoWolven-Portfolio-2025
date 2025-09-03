@@ -9,7 +9,7 @@ import Star from "../atoms/icons/Star.astro"
 			Wolven
 
 			<div>
-				<img src="/images/Tygo-Wolven-Portrait.png" alt="">
+				<img src="/images/Tygo-Wolven-Portrait-Blue.png" alt="">
 			</div>
 		</h1>
 
@@ -31,22 +31,21 @@ import Star from "../atoms/icons/Star.astro"
 			z-index: 0;
 			inset: 0;
     		background: radial-gradient(
-    		    ellipse at 50% -70%,
+				ellipse at 50% -70%,
     		    var(--white) 25%,
     		    var(--light-blue),
     		    var(--dark-grey) 50%
-				);
-				background-size: 200%;
-				background-position: 50%;
-				filter: blur(50px);
-			}
+			);
+			background-size: 200%;
+			background-position: 50%;
+			filter: blur(50px);
+		}
 			
-
 		.section-inner {
 			display: flex;
 			align-items: center;
 			flex-direction: column;
-
+			
 			h1 {
 				font-family: "Tan Kulture";
 				text-transform: uppercase;
@@ -60,7 +59,7 @@ import Star from "../atoms/icons/Star.astro"
 				width: 100%;
 				font-size: 10cqw;
 				container-type: inline-size;
-
+				
 				/* Tablet */
 				@media (max-width: 1280px) {
 					font-size: 14cqw;
@@ -76,62 +75,77 @@ import Star from "../atoms/icons/Star.astro"
 					text-box-trim: trim-both;
 					text-box-edge: cap alphabetic;
 				}
-
+				
 				div {
 					display: flex;
-					overflow: hidden;
 					position: absolute;
 					width: fit-content;
-					height: 66%;	
-
-					top: 17%;
+					height: 70%;	
+					
+					top: 15%;
 					left: 50%;
 					transform: translateX(-50%);
-
-					border: 4px solid var(--dark-blue);	
-					background: var(--light-blue);	
-					border-radius: 10rem;
-
+					
 					img {
 						padding-top: 0.5rem;
-						mix-blend-mode: hard-light;
-						transform: translateX(-0.2rem);
+						border-radius: 10rem;
+						box-shadow: var(--smooth);
+						background: var(--light-blue);
 					}	
+
+					&::after {
+    				    content: "";
+    				    position: absolute;
+    				    height: 100%;
+    				    width: 100%;
+    				    padding: 4px;
+    				    border-radius: 10rem;
+    				    background-image: conic-gradient(
+    				        from var(--angle),
+    				        var(--medium-blue) 33%,
+    				        var(--white),
+    				        var(--medium-blue) 66%
+    				    );
+    				    top: 50%;
+    				    left: 50%;
+    				    transform: translate(-50%, -50%);
+    				    animation: 3s spinBorder linear infinite;
+    				}
 				}
 			}
-
+			
 			svg {
 				/* Compensate the top and bottom margin, because of the bad heading-trim. */
 				margin: 5rem 0 6rem 0;
-
+				
 				/* If the property is supported, we don't have to compensate the margins to be even. */
 				@supports (text-box-trim: trim-both) {
 					margin: 6rem 0;
 				}
-
+				
 				/* Mobile */
 				@media (max-width: 768px) {
 					scale: 0.75;
 					margin: 2rem 0 3rem 0;
-
+					
 					/* If the property is supported, we don't have to compensate the margins to be even. */
 					@supports (text-box-trim: trim-both) {
 						margin: 3rem 0;
 					}
 				}
 			}
-
+			
 			blockquote {
 				max-width: 40ch;
 				font-size: 24px;
-            	text-align: center;
+				text-align: center;
 				margin-bottom: 64px;
-
-            	/* Mobile */
-            	@media (max-width: 768px) {
-            	    font-size: 18px;
-            	}
-        	}
+				
+				/* Mobile */
+				@media (max-width: 768px) {
+					font-size: 18px;
+				}
+			}
 		}
 	}
 </style>

@@ -8,8 +8,17 @@ const { link, image, title, framework } = Astro.props;
 
 <li>
     <a href={ link }>
-        <img src={ image } alt="Preview of `title`">
+        <!-- If / Else Statement -->
+        { image ? (
+            <img src={image} alt={title} />
+        ) : (
+            <div class="archive">
+                <span>48</span>
+            </div>
+        )}        
+
         <h2>{ title }</h2>
+
         <div>
             <p>{ framework }</p>
             <DiagonalChevron color="var(--white)" />
@@ -35,7 +44,39 @@ const { link, image, title, framework } = Astro.props;
                 margin: 2rem 0 1rem 0;
             }
 
-            div {
+            div.archive {
+                width: 100%;
+                aspect-ratio: 1;
+                position: relative;
+                border: 2px solid var(--light-grey);
+
+                span {
+                    font-size: 24px;
+                    position: absolute;
+                    color: var(--light-grey);
+
+                    top: 1.5rem;
+                    right: 1.5rem;
+                }
+
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background: var(--light-grey);
+
+                    width: 2px;
+                    height: 100px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &::after {
+                    transform: translate(-50%, -50%) rotate(90deg);
+                }
+            }
+
+            div:not(.archive) {
                 display: flex;
                 padding-top: 1rem;
                 justify-content: space-between;
