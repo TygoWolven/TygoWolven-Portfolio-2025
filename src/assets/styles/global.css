@@ -163,7 +163,7 @@ i {
 }
         
 /* Property for the gradient-border animation */
-@property --angle{
+@property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;

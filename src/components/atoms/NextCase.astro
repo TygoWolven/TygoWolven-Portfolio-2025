@@ -9,14 +9,15 @@ const { nextCase } = Astro.props;
             <h3>WOGO</h3>
             <img src="/images/WOGO.png" alt="">
         </a>
+        <img src="/images/Star.png" alt="" class="star">
     </section>
 </section>
 
 
 <style>
     #next-case {
-        padding-top: 124px;
-        padding-bottom: 196px;
+        padding-top: 96px;
+        padding-bottom: 7rem;
         margin-bottom: -124px;
         border-radius: 124px 124px 0 0;
         background: var(--light-blue);
@@ -34,9 +35,13 @@ const { nextCase } = Astro.props;
             a {
                 display: flex;
                 overflow: hidden;
+                position: relative;
                 align-items: center;
                 flex-direction: column;
                 border-bottom: 2px solid var(--white);
+
+                /* Anchor positioning */
+                anchor-name: --star-anchor;
 
                 h3 {
                     font-size: 3rem;
@@ -82,6 +87,16 @@ const { nextCase } = Astro.props;
                         width: 80%;
                     }
                 }  
+            }
+
+            .star {
+                filter: brightness(100);
+                transform: translateY(-50%);
+                
+                /* Anchor positioning */
+                position: absolute;
+                position-anchor: --star-anchor;
+                position-area: bottom center;
             }
         }
     }

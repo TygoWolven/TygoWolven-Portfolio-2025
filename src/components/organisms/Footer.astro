@@ -5,13 +5,8 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
 <section id="footer">
     <div class="section-inner">
         <footer>
-            <div class="top-footer flex justify">
-                <h3>Tygo Wolven</h3>
-                <a href="#home" class="back-to-top">
-                    <DiagonalChevron color="var(--dark-grey)" />
-                </a>
-            </div>
-            <div class="bottom-footer flex justify">
+            <h3>Lets <span>work</span> together</h3>
+            <div>
                 <p>12:39 PM Amsterdam</p>
                 <ul class="socials">
                     <li>
@@ -37,8 +32,8 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
 
 <style>
     #footer {
-        padding-top: 124px;
-        padding-bottom: 64px;
+        padding-top: 96px;
+        padding-bottom: 96px;
         border-radius: 124px 124px 0 0;
         background: var(--light-blue);
 
@@ -46,87 +41,89 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
         @media (max-width: 768px) {
             border-radius: 48px 48px 0 0;
         }
-        
-        .top-footer {
+
+        .section-inner {
             h3 {
-                font-size: 4rem;
-                font-weight: 500;
-                letter-spacing: 1px;
-                margin-bottom: 4rem;
-                text-transform: uppercase;
                 font-family: "Tan Kulture";
-
-                /* Mobile */
-                @media (max-width: 768px) {
-                    font-size: 3rem;
-                    max-width: 8ch;
-                    line-height: 120%;
-                }
-            }
-
-            .back-to-top {
-                /* Weird paddings to fix the svg path spacing... (Looking for a better fix) */
-                padding: 43px 44px 40px 45px;
-                
-                border-radius: 50%;
-                height: fit-content;
-                background: var(--white);
-    
-                svg {
-                    scale: 1.5;
-                transform: rotate(-45deg);
-                }
-    
-                &:hover {
-                    scale: 1.1;
-                }
-            }
-        }
-
-        .bottom-footer {
-            p {
+                text-transform: uppercase;
                 position: relative;
-                font-weight: 600;
-    
-                &::before {
-                    content: "Local Time";
-                    position: absolute;
-                    top: -100%;
-                    opacity: 0.5;
-                    font-size: 12px;
-                    text-transform: uppercase;
-                }
-            }
+                font-weight: 500;
+                font-size: 128px;
+                padding-bottom: 5rem;
+                border-bottom: 2px solid var(--white);
 
-            .socials {
-                gap: 2rem;
-                display: flex;
-                font-weight: 600;
-                position: relative;
-    
-                &::before {
-                    content: "Social Media";
+                &::after {
+                    content: url("/images/Star.png");
                     position: absolute;
-                    top: -100%;
-                    opacity: 0.5;
-                    font-size: 12px;
-                    text-transform: uppercase;
+                    left: 50%;
+                    bottom: -47px;
+                    filter: brightness(100);
+                    transform: translateX(-50%);
                 }
-    
-                a {    
-                    &:hover {
-                        opacity: 0.5;
+
+                span {
+                    font-family: inherit;
+                    font-size: inherit;
+                    position: relative;
+
+                    &::before {
+                        content: "Available for work";
+                        position: absolute;
+                        text-align: center;
+                        color: var(--light-blue);
+                        background: var(--dark-blue);
+                        transform: translateY(-50%);
+                        width: 100%;
+                        top: 50%;
+
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 100%;
+                        padding: 0.5rem 0;
+                        font-family: Montserrat;
                     }
                 }
             }
 
-            /* Mobile */
-            @media (max-width: 768px) {
+            div {
                 display: flex;
-                flex-direction: column;
+                margin-top: 4rem;
+                justify-content: space-between;
 
                 p {
-                    margin-bottom: 4rem;
+                    position: relative;
+                    font-weight: 600;
+            
+                    &::before {
+                        content: "Local Time";
+                        position: absolute;
+                        top: -100%;
+                        opacity: 0.5;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .socials {
+                    gap: 2rem;
+                    display: flex;
+                    font-weight: 600;
+                    position: relative;
+            
+                    &::before {
+                        content: "Social Media";
+                        position: absolute;
+                        top: -100%;
+                        opacity: 0.5;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                    }
+            
+                    a {    
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
                 }
             }
         }
