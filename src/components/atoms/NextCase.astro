@@ -22,10 +22,14 @@ const { nextCase } = Astro.props;
         border-radius: 124px 124px 0 0;
         background: var(--light-blue);
 
-        /* Mobile */
+        @media (max-width: 500px) {    
+            margin-bottom: calc(-124px - 2rem);
+        }
+
         @media (max-width: 768px) {
             border-radius: 48px 48px 0 0;
         }
+
         
         .section-inner {
             display: flex;
@@ -44,9 +48,9 @@ const { nextCase } = Astro.props;
                 anchor-name: --star-anchor;
 
                 h3 {
-                    font-size: 3rem;
+                    font-size: 4rem;
                     font-weight: 500;
-                    margin-top: 1rem;
+                    margin-top: 0.5rem;
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     font-family: "Tan Kulture";

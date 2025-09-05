@@ -46,20 +46,11 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
             h3 {
                 font-family: "Tan Kulture";
                 text-transform: uppercase;
-                position: relative;
+                white-space: nowrap;
+                text-align: center;
+                
                 font-weight: 500;
-                font-size: 128px;
-                padding-bottom: 5rem;
-                border-bottom: 2px solid var(--white);
-
-                &::after {
-                    content: url("/images/Star.png");
-                    position: absolute;
-                    left: 50%;
-                    bottom: -47px;
-                    filter: brightness(100);
-                    transform: translateX(-50%);
-                }
+                font-size: clamp(2rem, 8vw, 128px);
 
                 span {
                     font-family: inherit;
@@ -81,14 +72,41 @@ import DiagonalChevron from "../atoms/icons/DiagonalChevron.astro";
                         line-height: 100%;
                         padding: 0.5rem 0;
                         font-family: Montserrat;
+
+                        @media (max-width: 500px) {    
+                            padding: 0.2rem 0;                        
+                        }
+                        
+                        @media (max-width: 1000px) {    
+                            font-size: 1.6cqw;
+                        }
                     }
                 }
             }
 
             div {
                 display: flex;
-                margin-top: 4rem;
+                position: relative;
                 justify-content: space-between;
+                
+                padding-top: 4rem;
+                margin-top: calc(5rem + 2px);
+                border-top: 2px solid var(--white);
+
+                @media (max-width: 500px) {    
+                    margin-top: calc(3rem + 2px);  
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+
+                &::after {
+                    content: url("/images/Star.png");
+                    position: absolute;
+                    left: 50%;
+                    top: 1px;
+                    filter: brightness(100);
+                    transform: translate(-50%, -50%);
+                }
 
                 p {
                     position: relative;
